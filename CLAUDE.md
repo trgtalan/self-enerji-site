@@ -32,13 +32,21 @@ Referanslar da ertelendi — veri derlenmedi.
 Kurulan: Header (*Hizmetler · İletişim*) → HeroSahne → IntroCards (2 kart) →
 HowItWorks (2 sekme) → WhyUs → Faq → FinalCta → Footer.
 
-## Bekleyen iki karar — kullanıcınındır
+## Bekleyen karar — kullanıcınındır
 
-1. **Teknoloji.** Statik HTML mi, Astro mı, Next mi? Envanterdeki bileşen isimleri
-   (Header, HeroSahne, FinalCta) React alışkanlığından geliyor ama karar verilmedi.
-2. **Hero slayt 1.** Başlığı da CTA'sı da hesaplayıcıya dayanıyor, hesaplayıcı
+1. **Hero slayt 1.** Başlığı da CTA'sı da hesaplayıcıya dayanıyor, hesaplayıcı
    ertelendi. Ya hesaplayıcı ilk sürüme girer, ya slayt 1'e hesaplayıcıdan bağımsız
    yeni bir başlık ve CTA (keşif talebi) yazılır. Seçilene kadar Hero kurulmaz.
+
+## Teknoloji — karar verildi
+
+**Next.js.** Gerekçe: görsel optimizasyonu (`next/image`), ileride gelecek
+`/hesapla` sayfası için hazır yönlendirme, ve envanterdeki bileşen adlarının
+doğrudan karşılığı. Animasyon ve yüksek çözünürlük bu kararın gerekçesi değil —
+onlar CSS/SVG işi, çerçeveden bağımsız.
+
+Sürüm ve dağıtım biçimi (statik dışa aktarım mı, Node sunucu mu) kurulum anında
+belirlenir; şimdi yazılmaz.
 
 ## İletişim kanalları
 
