@@ -52,14 +52,21 @@ onlar CSS/SVG işi, çerçeveden bağımsız.
 Sürüm ve dağıtım biçimi (statik dışa aktarım mı, Node sunucu mu) kurulum anında
 belirlenir; şimdi yazılmaz.
 
-## Sıra — ilk deploy en başta
+## Yayın
 
-Bölüm yazmadan önce boş Next iskeleti gerçek adrese çıkar. Orada bir kez doğrulanır:
-build komutu, çıktı klasörü, çalışma zamanı sürümü, alan adı. Bunlar bitmiş projede
-ilk kez denendiğinde hepsi aynı anda patlar.
+**Canlı: https://self-enerji-site.vercel.app** — Vercel, GitHub `main` dalına
+bağlı. Her `push` otomatik derlenip yayına gider.
 
-Sıra: iskelet → deploy → Hero → diğer bölümler. Her bölüm kendi commit'i ve kendi
-deploy'u ile gider.
+İlk deploy 25 Ağustos 2026'da boş iskeletle yapıldı ve orada doğrulandı: build
+komutu, çıktı klasörü, çalışma zamanı sürümü, HTTPS, HTTP→HTTPS yönlendirmesi
+(308) ve güvenlik başlıklarının tamamı. Üretim CSP'sinde `unsafe-eval` yok.
+
+Sıra: iskelet → **deploy (bitti)** → Hero → diğer bölümler. Her bölüm kendi
+commit'i ve kendi deploy'u ile gider.
+
+**Not — esneklik maddesi henüz düşmedi.** Ortak `CLAUDE.md`'deki süreli madde
+"sitenin ilk sürümü yayına girdiğinde" düşer; yayında olan şu an boş iskelet,
+ilk sürüm değil. Madde, bölümler tamamlanıp yayına girdiğinde düşer.
 
 ## Bu projede karşılığı olmayanlar
 
