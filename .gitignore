@@ -42,3 +42,17 @@ next-env.d.ts
 
 # proje
 .DS_Store
+
+# sir dosyalari — kazayla eklenmesin
+.env
+.env.*
+!.env.example
+*recovery*
+*kurtarma*
+*secret*
+*credential*
+*.pem
+*.key
+*.p12
+id_rsa*
+id_ed25519*
