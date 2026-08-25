@@ -3,6 +3,10 @@
 Ortak kurallar `~/.claude/CLAUDE.md` içindeki `aiw` bloğundan gelir. Burada yalnız
 bu projeye özgü olan var.
 
+Next'in kendi ajan kılavuzu: @AGENTS.md — `next dev` tarafından üretilir ve
+güncellenir, elle düzenlenmez. Sürüme özgü API bilgisi için
+`node_modules/next/dist/docs/` okunur; ezberden Next kodu yazılmaz.
+
 ## Ne
 
 İşletmenin web sitesi. Yeni bir işletme değil — aynı işin yeniden kurulan sitesi.
@@ -65,6 +69,12 @@ kontrolü için bugün önlem yazılmadı — olmayan sistemin bakımı üstleni
 
 **Hesaplayıcı geldiğinde bu madde yeniden açılır:** o an sunucu tarafı hesap,
 girdi doğrulama ve hız sınırı gerekir.
+
+## KVKK — ertelendi
+
+Aydınlatma metni yok, kullanıcı kararıyla ertelendi. **Tetiği: iletişim formu
+yayına girdiğinde.** Form kişisel veri topluyorsa metin gerekir; analitik
+eklenirse çerez onayı da gerekir. Ondan önce siteye eklenmez.
 
 ## İletişim kanalları
 
