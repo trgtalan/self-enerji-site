@@ -48,6 +48,24 @@ onlar CSS/SVG işi, çerçeveden bağımsız.
 Sürüm ve dağıtım biçimi (statik dışa aktarım mı, Node sunucu mu) kurulum anında
 belirlenir; şimdi yazılmaz.
 
+## Sıra — ilk deploy en başta
+
+Bölüm yazmadan önce boş Next iskeleti gerçek adrese çıkar. Orada bir kez doğrulanır:
+build komutu, çıktı klasörü, çalışma zamanı sürümü, alan adı. Bunlar bitmiş projede
+ilk kez denendiğinde hepsi aynı anda patlar.
+
+Sıra: iskelet → deploy → Hero → diğer bölümler. Her bölüm kendi commit'i ve kendi
+deploy'u ile gider.
+
+## Bu projede karşılığı olmayanlar
+
+İlk sürümde ayrı API, veri deposu, Supabase/Firebase ve giriş/yetki **yok**; form
+WhatsApp'a gidiyor. Bu yüzden CORS, RLS, bellekte veri tutma ve arayüzde yetki
+kontrolü için bugün önlem yazılmadı — olmayan sistemin bakımı üstlenilmez.
+
+**Hesaplayıcı geldiğinde bu madde yeniden açılır:** o an sunucu tarafı hesap,
+girdi doğrulama ve hız sınırı gerekir.
+
 ## İletişim kanalları
 
 Bilinen: WhatsApp `wa.me/4915256227461`, e-posta `trgtalan@gmail.com`.
