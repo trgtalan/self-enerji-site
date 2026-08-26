@@ -138,10 +138,8 @@ export default function AnaSayfa() {
           </Beliren>
 
           <Beliren gecikme={1}>
-            <div className="mt-12 overflow-x-auto">
-              <div className="min-w-[720px]">
-                <SistemSemasi />
-              </div>
+            <div className="mt-12">
+              <SistemSemasi />
             </div>
           </Beliren>
         </div>
