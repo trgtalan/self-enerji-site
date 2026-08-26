@@ -3,9 +3,10 @@
 Ortak kurallar `~/.claude/CLAUDE.md` içindeki `aiw` bloğundan gelir. Burada yalnız
 bu projeye özgü olan var. Satır tavanı 160.
 
-**Kapsam:** Bu depo sitenin kurulması ve yayına alınmasıyla ilgilenir. KVKK metni,
-hesap formülleri, mevzuat araştırması gibi işler ayrı oturumlarda üretilir ve
-**dosya olarak** gelir; burada yeniden araştırılmaz.
+**Kapsam:** Bu dosya sitenin kurulması ve yayına alınmasıyla ilgilenir. KVKK metni,
+hesap formülleri, mevzuat araştırması gibi işler ayrı oturumlarda `isler/<konu>/`
+altında üretilir; buradan okunur, burada yeniden araştırılmaz. Klasör o işe
+başlarken açılır — boş klasör açılmaz.
 
 Next'in kendi kılavuzu @AGENTS.md — `next dev` üretir, elle düzenlenmez. Sürüme
 özgü API için `node_modules/next/dist/docs/` okunur; ezberden Next kodu yazılmaz.
@@ -140,6 +141,16 @@ hesap, girdi doğrulama ve hız sınırı gerekir.
 
 Aydınlatma metni yok. **Tetiği: iletişim formu yayına girdiğinde.** Analitik
 eklenirse çerez onayı da gerekir. Ondan önce siteye eklenmez.
+
+## Firma kimliği
+
+**SELF Mühendislik ve San. Tic. Ltd. Şti.** — Akdeniz/Mersin.
+
+Referans ve rakam yokken güven buradan kurulur: gerçek unvan, gerçek yer, gerçek
+muhatap. Üç bağımsız model incelemesi de aynı boşluğu işaret etti.
+
+**Eksik:** muhatap mühendisin adı ve unvanı, açık adres, hizmet bölgesinin sınırı
+(yalnız Mersin mi, çevre iller de mi), sabit telefon. Yer tutucu konmaz.
 
 ## İletişim kanalları
 
