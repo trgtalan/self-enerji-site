@@ -130,15 +130,13 @@ sayfa eskide kaldı. `--color-zemin-koyu` belirteci yalnız burada yaşıyor.
 
 ## Yayın
 
-**Canlı: https://self-enerji-site.vercel.app** — Vercel, GitHub `main` dalına bağlı.
-Her `push` otomatik derlenip yayına gider. Her bölüm kendi commit'i ile.
+**Canlı: https://self-enerji-site.vercel.app** — Vercel, GitHub `main` dalına bağlı;
+her `push` yayına gider. İlk deploy 25 Ağustos 2026'da boş iskeletle yapıldı ve build
+komutu, çalışma zamanı sürümü, HTTPS, 308 yönlendirmesi ve güvenlik başlıkları orada
+doğrulandı. Üretim CSP'sinde `unsafe-eval` yok.
 
-İlk deploy 25 Ağustos 2026'da boş iskeletle yapıldı; build komutu, çalışma zamanı
-sürümü, HTTPS, 308 yönlendirmesi ve güvenlik başlıkları orada doğrulandı. Üretim
-CSP'sinde `unsafe-eval` yok.
-
-**Esneklik maddesi henüz düşmedi.** Ortak `CLAUDE.md`'deki süreli madde "ilk sürüm
-yayına girdiğinde" düşer. Yayında olan Hero'dan ibaret; ilk sürüm değil.
+**Esneklik maddesi henüz düşmedi** — ortak `CLAUDE.md`'deki süreli madde ilk sürüm
+yayına girdiğinde düşer; SelfCheck çalışmadan ilk sürüm sayılmaz.
 
 ## Bugün olmayanlar
 
