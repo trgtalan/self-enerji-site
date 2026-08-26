@@ -10,7 +10,7 @@ import { Isaret } from "@/components/Logo";
 export function Hero() {
   return (
     <section className="relative flex min-h-[88svh] flex-col items-center justify-center gap-9 overflow-hidden bg-zemin-koyu px-6 py-24 text-center">
-      <Isaret yukseklik={104} animasyonlu koyuZemin />
+      <Isaret yukseklik={104} animasyonlu />
 
       <div className="flex max-w-2xl flex-col gap-5">
         <h1 className="text-balance text-3xl font-extrabold leading-[1.18] tracking-tight text-white sm:text-4xl md:text-[2.75rem]">

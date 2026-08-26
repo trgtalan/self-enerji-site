@@ -47,7 +47,7 @@ export default function HesaplaSayfasi() {
       <div className="mx-auto flex max-w-3xl flex-col gap-14">
         <header className="flex flex-col items-center gap-6 text-center">
           <Link href="/" aria-label="Ana sayfaya dön">
-            <Isaret yukseklik={64} koyuZemin />
+            <Isaret yukseklik={64} />
           </Link>
           <h1 className="text-balance text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
             <span className="text-marka-acik">SelfCheck</span> nasıl işliyor?
