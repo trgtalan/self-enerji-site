@@ -1,19 +1,31 @@
 @import "tailwindcss";
 
-/* Marka belirteçleri — kaynak: onaylanan Y6 yönü, 25 Ağustos 2026.
-   Değerler logodan ölçüldü, seçilmedi. */
+/* Marka belirteçleri — onaylanan C yönü, sıcak yeşil.
+   Güneşin turuncusuyla çatışan teal bırakıldı. */
 @theme {
-  --color-marka-teal: #12494e;
-  --color-marka-yesil: #5aa03a;
-  --color-marka-acik: #a8e87f;
-  --color-marka-en-acik: #d6f5b8;
+  --color-marka-koyu: #4a7c2f;
+  --color-marka-yesil: #7fb843;
+  --color-marka-acik: #c3e57a;
+  --color-marka-en-acik: #e2f5c4;
+
+  /* sayfa mürekkebi — grafit değil koyu yeşil */
+  --color-murekkep: #26401d;
+  --color-murekkep-ikincil: #4c5c45;
 
   /* koyu zemin ailesi — teal'den türetildi, nötr siyah değil */
   --color-zemin-koyu: #0d2f33;
   --color-zemin-koyu-yumusak: #143f44;
 }
 
-html { color-scheme: light dark; }
+/* Tema: light — DESIGN.md kararı. Güneş, limb darkening ve korona beyaz kâğıt
+   için hesaplandı; koyu zeminde ters okunur. Zemin ve mürekkep AÇIKÇA boyanır:
+   tanımsız bırakılırsa tarayıcı koyu temayı seçer ve sayfa okunmaz hâle gelir. */
+html { color-scheme: light; }
+
+body {
+  background: #ffffff;
+  color: #26401d;
+}
 
 /* Logo açılma animasyonu — üç kat sırayla açılır.
    Hareket azaltma tercihi açıkken logo son hâliyle durur. */

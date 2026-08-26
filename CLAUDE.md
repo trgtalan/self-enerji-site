@@ -51,11 +51,15 @@ benzeri fiyat çapası önerileri **reddedildi**, tekrar önerilmez.
 ## Marka — karara bağlandı
 
 **Y6 yönü** (25 Ağustos 2026): yuvarlatılmış origami. Üç kat ve hareket korundu,
-köşelere yarıçap verildi. Üst kattaki teal kasıtlı bir renk kararı.
+köşelere yarıçap verildi.
 
-Renkler logodan ölçüldü, seçilmedi. `globals.css` içinde `@theme`:
-`--color-marka-teal` `#12494e` · `--color-marka-yesil` `#5aa03a` ·
-`--color-marka-acik` `#a8e87f`.
+**C renkleri** (26 Ağustos 2026): sıcak yeşil. Üst kattaki teal `#12494e` güneşin
+turuncusuyla çatıştığı için bırakıldı; üç kat da aynı yeşil ailesinden.
+`--color-marka-koyu` `#4a7c2f` · `--color-marka-yesil` `#7fb843` ·
+`--color-marka-acik` `#c3e57a`.
+
+Sayfada `Kilit` kullanılır — işaret **ve** firma adı birlikte. Yalnız `Isaret`
+kullanmak markayı adsız bırakır.
 
 Varlıklar `public/marka/`: `self-isaret.svg`, `self-isaret-tek-renk.svg`
 (`currentColor` — kaşe ve tek renk baskı), `self-ikon.svg`. Favicon
@@ -75,42 +79,40 @@ duruyor — `@theme` belirtecine taşınacak.
 ## Açılış görseli — karara bağlandı
 
 **B yönü** (26 Ağustos 2026): BlueYard okuması. `src/components/Gunes.tsx` — WebGL
-fragment shader, kütüphane ve görsel dosyası yok.
-
-Yönü tanımlayan üç karar:
-
-1. **Küre kadrajın altında oturur ve taşar.** Karakter kompozisyondan geliyor —
-   küçük karede anlaşılmaz.
-2. **Yüzey doku değil parçacık serpintisi.** Zerreler adalar hâlinde toplanır,
-   limbe doğru yoğunlaşır.
-3. **Diskin sert sınırı yok.** Gövde söner, zerreler dışarı saçılır.
+fragment shader, kütüphane ve görsel dosyası yok. Üç karar: küre kadrajın altında
+oturup taşar · yüzey doku değil parçacık serpintisidir · diskin sert sınırı yoktur.
+Ayrıntı ve gerekçeler bileşenin kendi yorumlarında.
 
 BlueYard'ın küresinden **alınmayan** şey: o ışık alan bir cisim. Bu ışık veren bir
-cisim — limb darkening yerinde, merkez sıcak.
+cisim — limb darkening yerinde. **Zemin saf beyaz değil**, aşağı doğru hafifçe
+şeftaliye döner; beyazdan tek sapma bu ve geri alınabilir.
 
-**Zemin saf beyaz değil**, aşağı doğru hafifçe şeftaliye döner. Beyazdan tek sapma
-bu, geri alınabilir. Hareket azaltma tercihinde tek kare çizilir.
+Elenen yönler, tekrar önerilmez: gerçekçi plazma (A), litografi (L), hasat (H),
+koyu zeminde yeşil gezegen, Canvas 2D güneş.
 
-Elenen yönler, tekrar önerilmez: gerçekçi plazma (A), litografi (L), hasat
-(H — kenar marka yeşiline sönüyor), koyu zeminde yeşil gezegen, Canvas 2D güneş.
+## Ana sayfa — kuruldu, metni geçici
 
-## Hero — kuruldu, metni geçici
+Altı bölüm: açılış → firma → süreç → maliyet → SelfCheck → keşif/iletişim.
 
-Tam ekran güneş + işaret + başlık + alt metin + `/hesapla` bağlantısı.
-**Metin karara bağlanmadı** — oradaki cümleler öneri. Ev fotoğrafı yok.
+**SelfCheck sayfanın konusu değil, bir bölümü.** Ana sayfa normal bir enerji
+firmasının sayfası gibi görünür. Sıra üç bağımsız model incelemesiyle doğrulandı:
+araç geriye, keşif talebi öne. Kapanışın eylemi keşif talebidir, araç değil.
+
+**Metin karara bağlanmadı** — cümleler öneri. Ev fotoğrafı yok.
+
+Hero'da güneş kadrajın alt yarısında durur (`MY = -0.30H`, `R = max(0.54W, 0.60H)`);
+korona `r≈1.3`'e taştığı için daha yukarıda konumlanırsa metin turuncu zemine düşer.
+
+**Tema light, zemin açıkça boyanır.** `globals.css` içinde `html{color-scheme:light}`
+ve `body{background:#fff}`. Tanımsız bırakılırsa tarayıcı koyu temayı seçiyor ve
+sayfa okunmaz hâle geliyor — bir kez yaşandı.
 
 ## `/hesapla` — bilinen borç
 
 Sayfa var, **hesap yapmıyor**: süreci dört adımda anlatıp WhatsApp'a devrediyor.
-Form yok — form kişisel veri toplar, o da KVKK metnini gerektirir.
-
-**Tasarım sistemine uymuyor.** Koyu zemin (`bg-zemin-koyu`), `rounded-full` /
-`rounded-2xl` köşeler ve dolu renkli buton kullanıyor; üçü de DESIGN.md'ye aykırı.
-Ana sayfa yeni dile geçti, bu sayfa eski dilde kaldı. Ana sayfa bitince düzeltilir.
-`--color-zemin-koyu` belirteci yalnız burada yaşıyor.
-
-Sihirbaz, hesap mantığı ve sonuç ekranı sonra gelir; o gün KVKK, girdi doğrulama
-ve hız sınırı maddeleri birlikte açılır.
+Form yok. **Tasarım sistemine de uymuyor** — koyu zemin, yuvarlak köşeler ve dolu
+renkli buton kullanıyor; üçü de DESIGN.md'ye aykırı. Ana sayfa yeni dile geçti, bu
+sayfa eskide kaldı. `--color-zemin-koyu` belirteci yalnız burada yaşıyor.
 
 ## Açık kalanlar — karar kullanıcınındır
 

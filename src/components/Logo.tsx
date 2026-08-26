@@ -16,13 +16,13 @@ type IsaretProps = {
 
 const ORAN = 68 / 132; // viewBox genişlik / yükseklik
 
-/* Onaylanan Y6 renkleri. Koyu zemin varyantı YOK — renk değişikliği kullanıcı
-   kararıdır. Bilinen sorun: üst kat (#12494e) koyu zeminde (#0d2f33) düşük
-   kontrastta kalıyor; çözümü karara bağlanmadı. */
+/* Onaylanan C yönü — sıcak yeşil. Üst kattaki teal, güneşin turuncusuyla
+   çatıştığı için bırakıldı; üç kat da aynı yeşil ailesinden.
+   Renk değişikliği kullanıcı kararıdır, sorulmadan değiştirilmez. */
 const KATLAR = [
-  { d: "M56,6 L56,26 L0,54 L0,34 Z", renk: "#12494e", sinif: "kat kat-1" },
-  { d: "M0,36 L0,56 L56,84 L56,64 Z", renk: "#5aa03a", sinif: "kat kat-2" },
-  { d: "M56,66 L56,86 L0,114 L0,94 Z", renk: "#a8e87f", sinif: "kat kat-3" },
+  { d: "M56,6 L56,26 L0,54 L0,34 Z", renk: "#4a7c2f", sinif: "kat kat-1" },
+  { d: "M0,36 L0,56 L56,84 L56,64 Z", renk: "#7fb843", sinif: "kat kat-2" },
+  { d: "M56,66 L56,86 L0,114 L0,94 Z", renk: "#c3e57a", sinif: "kat kat-3" },
 ];
 
 export function Isaret({
@@ -71,8 +71,8 @@ export function Kilit({ yukseklik = 40, animasyonlu = false, koyuZemin = false }
         className="font-semibold leading-none tracking-[0.22em]"
         style={{ fontSize: yukseklik * 0.52 }}
       >
-        <span style={{ color: koyuZemin ? "#e8f4ea" : "#12494e" }}>SELF</span>{" "}
-        <span className="font-medium" style={{ color: koyuZemin ? "#a8e87f" : "#5aa03a" }}>
+        <span style={{ color: koyuZemin ? "#e8f4ea" : "#26401d" }}>SELF</span>{" "}
+        <span className="font-medium" style={{ color: koyuZemin ? "#c3e57a" : "#4a7c2f" }}>
           ENERJİ
         </span>
       </span>

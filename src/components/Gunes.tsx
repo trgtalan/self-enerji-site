@@ -179,9 +179,12 @@ export function Gunes({ className }: { className?: string }) {
       W = cv.width = Math.max(1, Math.floor(cv.clientWidth * D));
       H = cv.height = Math.max(1, Math.floor(cv.clientHeight * D));
       gl.viewport(0, 0, W, H);
-      R = Math.max(W * 0.5, H * 0.54);
+      // Küre kadrajın altında oturur. Merkez ve yarıçap birlikte ayarlanır:
+      // korona r≈1.3'e kadar taştığı için diskin üst kenarı yeterince aşağıda
+      // olmalı, yoksa hero metni turuncu zemine düşer ve kontrast bozulur.
+      R = Math.max(W * 0.54, H * 0.60);
       MX = W * 0.5;
-      MY = -H * 0.16; // küre kadrajın altında oturur
+      MY = -H * 0.30;
       gl.uniform1f(uR, R);
       gl.uniform2f(uM, MX, MY);
       gl.uniform2f(uS, W, H);
