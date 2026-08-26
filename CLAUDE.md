@@ -131,17 +131,12 @@ CSP'sinde `unsafe-eval` yok.
 **Esneklik maddesi henüz düşmedi.** Ortak `CLAUDE.md`'deki süreli madde "ilk sürüm
 yayına girdiğinde" düşer. Yayında olan Hero'dan ibaret; ilk sürüm değil.
 
-## Bu projede karşılığı olmayanlar
+## Bugün olmayanlar
 
-Ayrı API, veri deposu, Supabase/Firebase, giriş/yetki ve form **yok**. Bu yüzden
-CORS, RLS ve arayüzde yetki kontrolü için önlem yazılmadı — olmayan sistemin bakımı
-üstlenilmez. **Hesaplayıcı geldiğinde bu madde yeniden açılır:** o an sunucu tarafı
-hesap, girdi doğrulama ve hız sınırı gerekir.
-
-## KVKK — ertelendi
-
-Aydınlatma metni yok. **Tetiği: iletişim formu yayına girdiğinde.** Analitik
-eklenirse çerez onayı da gerekir. Ondan önce siteye eklenmez.
+Ayrı API, veri deposu, giriş/yetki ve form **yok**; bu yüzden CORS, RLS ve yetki
+kontrolü için önlem yazılmadı. **SelfCheck geldiğinde hepsi açılır:** sunucu tarafı
+hesap, girdi doğrulama, hız sınırı, KVKK metinleri (`isler/kvkk/`), Maps anahtarı
+kısıtı ve CSP genişletmesi.
 
 ## Firma kimliği
 
