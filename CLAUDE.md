@@ -4,9 +4,10 @@ Ortak kurallar `~/.claude/CLAUDE.md` içindeki `aiw` bloğundan gelir. Burada ya
 bu projeye özgü olan var. Satır tavanı 160.
 
 **Kapsam:** Bu dosya sitenin kurulması ve yayına alınmasıyla ilgilenir. KVKK metni,
-hesap formülleri, mevzuat araştırması gibi işler ayrı oturumlarda `isler/<konu>/`
-altında üretilir; buradan okunur, burada yeniden araştırılmaz. Klasör o işe
-başlarken açılır — boş klasör açılmaz.
+hesap formülleri, mevzuat araştırması gibi işler ayrı oturumlarda `isler/` altındaki
+konu klasörlerinde üretilir; buradan okunur, burada yeniden araştırılmaz. Her
+klasörde ne yapılacağını anlatan bir `CLAUDE.md` var. Açık işler: `isler/hesap/`,
+`isler/kvkk/`, `isler/mevzuat/`, `isler/rapor/`.
 
 Next'in kendi kılavuzu @AGENTS.md — `next dev` üretir, elle düzenlenmez. Sürüme
 özgü API için `node_modules/next/dist/docs/` okunur; ezberden Next kodu yazılmaz.
