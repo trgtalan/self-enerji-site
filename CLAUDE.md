@@ -65,11 +65,34 @@ seçildikten sonra üretilir.
 Orijinal PNG `public/marka/self-logo.png` olarak duruyor — karşılaştırma için,
 sitede kullanılmıyor.
 
-## Bekleyen karar — kullanıcınındır
+## Hesaplayıcı — karara bağlandı
 
-1. **Hero slayt 1.** Başlığı da CTA'sı da hesaplayıcıya dayanıyor, hesaplayıcı
-   ertelendi. Ya hesaplayıcı ilk sürüme girer, ya slayt 1'e hesaplayıcıdan bağımsız
-   yeni bir başlık ve CTA (keşif talebi) yazılır. Seçilene kadar Hero kurulmaz.
+**`/hesapla` ilk sürüme girdi ama hesap yapmıyor.** Kullanıcı kararı: sayfa var
+olsun, sayı üretmesin. Böylece "var olmayan sayfaya link kurulmaz" kuralı da
+korunuyor — Hero'daki buton gerçek bir sayfaya gidiyor.
+
+Sayfa süreci dört adımda anlatıyor ve WhatsApp'a devrediyor. **Form yok** —
+form kişisel veri toplar, o da KVKK aydınlatma metnini gerektirir.
+
+Sihirbaz, hesap mantığı ve sonuç ekranı sonra gelir; o gün KVKK, girdi doğrulama
+ve hız sınırı maddeleri de birlikte açılır.
+
+## Hero — kuruldu, yarım
+
+Tek sahne: animasyonlu işaret + başlık + CTA. **Envanterdeki ikinci slayt (tam
+ekran ev fotoğrafı) kurulmadı** — gerçek kurulum fotoğrafı yok, yer tutucu
+konmuyor. Fotoğraf geldiğinde bölüm carousel'e döner; tek sahne olduğu için
+şimdilik ok ve nokta da yok.
+
+**Başlıkta bir kelime değiştirildi.** Envanterde "SelfCheck ile **anında**
+öğrenin" yazıyor; `/hesapla` anında sonuç üretmediği için "anında" çıkarıldı.
+Hesap mantığı geldiğinde geri konabilir.
+
+## Bekleyen kararlar — kullanıcınındır
+
+1. **Yazı tipi.** Şimdilik Manrope (`latin-ext` alt kümesiyle, Türkçe için
+   zorunlu). Geçici — marka yazı tipi kararı verilmedi.
+2. **Hero fotoğrafı.** Slayt 2 için gerçek kurulum fotoğrafı gerekiyor.
 
 ## Teknoloji — karar verildi
 

@@ -9,23 +9,29 @@ type IsaretProps = {
   yukseklik?: number;
   /** true ise üç kat sırayla açılır */
   animasyonlu?: boolean;
-  /** true ise currentColor kullanır — koyu zemin ve tek renk baskı için */
+  /** true ise currentColor kullanır — tek renk baskı ve kaşe için */
   tekRenk?: boolean;
+  /** koyu zemin varyantı: üst kat açılır, yoksa zemine gömülüyor */
+  koyuZemin?: boolean;
   className?: string;
 };
 
 const ORAN = 68 / 132; // viewBox genişlik / yükseklik
 
+/* Açık zeminde üst kat koyu teal. Koyu zeminde o teal (#12494e) Hero zeminine
+   (#0d2f33) gömülüyor — ölçüldü, gözle doğrulandı — bu yüzden koyu zemin
+   varyantında üst kat açık teal'e çıkıyor. Şekil aynı, sadece ton değişiyor. */
 const KATLAR = [
-  { d: "M56,6 L56,26 L0,54 L0,34 Z", renk: "#12494e", sinif: "kat kat-1" },
-  { d: "M0,36 L0,56 L56,84 L56,64 Z", renk: "#5aa03a", sinif: "kat kat-2" },
-  { d: "M56,66 L56,86 L0,114 L0,94 Z", renk: "#a8e87f", sinif: "kat kat-3" },
+  { d: "M56,6 L56,26 L0,54 L0,34 Z", acik: "#12494e", koyu: "#4fa8a4", sinif: "kat kat-1" },
+  { d: "M0,36 L0,56 L56,84 L56,64 Z", acik: "#5aa03a", koyu: "#7fd05c", sinif: "kat kat-2" },
+  { d: "M56,66 L56,86 L0,114 L0,94 Z", acik: "#a8e87f", koyu: "#d6f5b8", sinif: "kat kat-3" },
 ];
 
 export function Isaret({
   yukseklik = 48,
   animasyonlu = false,
   tekRenk = false,
+  koyuZemin = false,
   className,
 }: IsaretProps) {
   return (
@@ -38,15 +44,12 @@ export function Isaret({
       aria-label="Self Enerji"
     >
       <g strokeLinejoin="round" strokeWidth={11}>
-        {KATLAR.map((kat) => (
-          <path
-            key={kat.d}
-            className={kat.sinif}
-            d={kat.d}
-            fill={tekRenk ? "currentColor" : kat.renk}
-            stroke={tekRenk ? "currentColor" : kat.renk}
-          />
-        ))}
+        {KATLAR.map((kat) => {
+          const renk = tekRenk ? "currentColor" : koyuZemin ? kat.koyu : kat.acik;
+          return (
+            <path key={kat.d} className={kat.sinif} d={kat.d} fill={renk} stroke={renk} />
+          );
+        })}
       </g>
     </svg>
   );
@@ -66,7 +69,7 @@ type KilitProps = {
 export function Kilit({ yukseklik = 40, animasyonlu = false, koyuZemin = false }: KilitProps) {
   return (
     <span className="inline-flex items-center gap-3">
-      <Isaret yukseklik={yukseklik} animasyonlu={animasyonlu} />
+      <Isaret yukseklik={yukseklik} animasyonlu={animasyonlu} koyuZemin={koyuZemin} />
       <span
         className="font-semibold leading-none tracking-[0.22em]"
         style={{ fontSize: yukseklik * 0.52 }}
