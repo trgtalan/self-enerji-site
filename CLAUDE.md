@@ -101,16 +101,15 @@ form kişisel veri toplar, o da KVKK aydınlatma metnini gerektirir.
 Sihirbaz, hesap mantığı ve sonuç ekranı sonra gelir; o gün KVKK, girdi doğrulama
 ve hız sınırı maddeleri de birlikte açılır.
 
-## Hero — kuruldu, yarım
+## Hero — kuruldu, metni geçici
 
-Tek sahne: animasyonlu işaret + başlık + CTA. **Envanterdeki ikinci slayt (tam
-ekran ev fotoğrafı) kurulmadı** — gerçek kurulum fotoğrafı yok, yer tutucu
-konmuyor. Fotoğraf geldiğinde bölüm carousel'e döner; tek sahne olduğu için
-şimdilik ok ve nokta da yok.
+Tam ekran güneş + işaret + başlık + alt metin + `/hesapla` bağlantısı.
 
-**Başlıkta bir kelime değiştirildi.** Envanterde "SelfCheck ile **anında**
-öğrenin" yazıyor; `/hesapla` anında sonuç üretmediği için "anında" çıkarıldı.
-Hesap mantığı geldiğinde geri konabilir.
+**Metin HENÜZ KARARA BAĞLANMADI.** Şu anki başlık ("Güneş enerjisi, çatınıza
+bakarak başlar.") ve alt metin birer öneri; sayfanın geri kalanı da açık.
+Renkli buton yok — DESIGN.md gereği bağlantı altı çizili metin.
+
+**Ev fotoğrafı kurulmadı** — gerçek kurulum fotoğrafı yok, yer tutucu konmuyor.
 
 ## Tasarım sistemi — `DESIGN.md`
 
@@ -123,14 +122,30 @@ saç teli çizgide; buton rengi yok — hayalet buton kullanılıyor.
 grafit) marka yeşiliyle akraba değil. Şimdilik yeşil yalnız logoda; sayfa
 DESIGN.md paletiyle yürüyor. Alternatif: şeftalinin yerini marka yeşili alır.
 
-## Açılış görseli — canlı güneş
+## Açılış görseli — karara bağlandı
 
-Hero'da Canvas 2D ile çizilen bir güneş var. Kütüphane ve görsel dosyası yok.
-Merkez beyaz-sıcak, kenar koyu — limb darkening, güneşin gerçek gözlemlenen
-özelliği. Yüzey granül hücrelerden oluşuyor, korona ışınları diskin dışına
-taşıyor. Hareket azaltma tercihinde animasyon durur.
+**B yönü onaylandı** (26 Ağustos 2026): BlueYard okuması. `src/components/Gunes.tsx`
+— WebGL fragment shader, kütüphane ve görsel dosyası yok.
 
-Bir önceki deneme (koyu zeminde yeşil gezegen) kullanıcı tarafından reddedildi.
+Yönü tanımlayan üç karar:
+
+1. **Küre kadrajın altında oturur ve taşar.** Merkez `-0.16 × yükseklik`, yarıçap
+   kadrajdan büyük. Karakter kompozisyondan geliyor — küçük karede anlaşılmaz.
+2. **Yüzey doku değil parçacık serpintisi.** Hücre başına bir zerre, boyu hash'e
+   bağlı; zerreler adalar hâlinde toplanır ve limbe doğru yoğunlaşır.
+3. **Diskin sert sınırı yok.** Gövde `r=1`'e doğru söner, zerreler dışarı saçılır.
+
+BlueYard'ın küresinden **alınmayan** şey: o ışık alan bir cisim (üstü aydınlık,
+altı karanlık). Bu ışık veren bir cisim — limb darkening yerinde, merkez sıcak.
+
+**Zemin saf beyaz değil.** Aşağı doğru çok hafif şeftaliye döner; atmosfer hissi
+buradan geliyor. Beyazdan tek sapma bu, geri alınabilir.
+
+Hareket azaltma tercihinde tek kare çizilir, imleç etkileşimi kapanır.
+
+Elenen yönler: gerçekçi plazma (A — "ekran koruyucu" gibi duruyor), litografi
+(L — gravür, basamaklı ton), hasat (H — kenar marka yeşiline sönüyor). Daha
+öncesinde koyu zeminde yeşil gezegen ve Canvas 2D güneş reddedilmişti.
 
 ## Bekleyen kararlar — kullanıcınındır
 
