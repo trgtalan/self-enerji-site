@@ -3,6 +3,7 @@ import { Gunes } from "@/components/Gunes";
 import { Kilit } from "@/components/Logo";
 import { SistemSemasi } from "@/components/SistemSemasi";
 import { Beliren } from "@/components/Beliren";
+import { Sorular } from "@/components/Sorular";
 
 /* Ana sayfa — bir enerji firmasının sayfası. SelfCheck yalnız bir bölüm.
    Sıra üç bağımsız model incelemesiyle doğrulandı: araç geriye, keşif öne.
@@ -77,9 +78,10 @@ export default function AnaSayfa() {
               yürütülür. Keşif yerinde ve ücretsizdir.
             </p>
 
-            <p className="mt-8 text-center">
+            <div className="mt-9 flex flex-wrap items-center justify-center gap-x-9 gap-y-3">
+              <Baglanti href="/hesapla">Çatınızı SelfCheck ile ölçün</Baglanti>
               <Baglanti href="#iletisim">Ücretsiz keşif talep edin</Baglanti>
-            </p>
+            </div>
           </div>
         </div>
       </header>
@@ -96,9 +98,9 @@ export default function AnaSayfa() {
             </div>
             <div className="lg:pt-11">
               <p className="text-[1.02rem] leading-relaxed text-murekkep-ikincil">
-                SELF Mühendislik, kurucusu enerji mühendisi olan bir mühendislik
-                firmasıdır. Sistemin tasarımı, dağıtım şirketiyle yürütülen başvuru ve
-                onay süreçleri, kurulum ve devreye alma aynı çatı altında yapılır.
+                SELF Enerji, mühendisler tarafından kurulan bir mühendislik firmasıdır.
+                Sistemin tasarımı, dağıtım şirketiyle yürütülen başvuru ve onay
+                süreçleri, kurulum ve devreye alma aynı çatı altında yapılır.
               </p>
               <p className="mt-5 text-[1.02rem] leading-relaxed text-murekkep-ikincil">
                 Kurulumda kullanılan ekipman garantilidir; garanti kapsamı ve koşulları
@@ -183,10 +185,14 @@ export default function AnaSayfa() {
               Fiyat, keşiften sonra sisteme özel hazırlanır.
             </h2>
             <p className="mt-7 max-w-[52ch] text-[1.02rem] leading-relaxed text-murekkep-ikincil">
-              Her sistem farklı boyutlandırılır. Teklifte seçilen ekipman, kurulum
-              kapsamı, garanti koşulları ve yürütülecek izin süreçleri açıkça
-              gösterilir — böylece yalnız toplam bedeli değil, bedelin neye karşılık
-              geldiğini de görürsünüz.
+              Sitede hazır paket fiyatı bulamazsınız. Çatının yönü, eğimi, gölgelenmesi
+              ve taşıma kapasitesi her evde başkadır; hazır paket bunları yok saydığı
+              için gerçek bedel çoğu zaman kurulum sırasında ortaya çıkar.
+            </p>
+            <p className="mt-5 max-w-[52ch] text-[1.02rem] leading-relaxed text-murekkep-ikincil">
+              Teklifte seçilen ekipman, kurulum kapsamı, garanti koşulları ve
+              yürütülecek izin süreçleri açıkça gösterilir — böylece yalnız toplam
+              bedeli değil, bedelin neye karşılık geldiğini de görürsünüz.
             </p>
           </Beliren>
 
@@ -219,17 +225,16 @@ export default function AnaSayfa() {
           <Beliren>
             <Etiket>SelfCheck</Etiket>
             <h2 className="max-w-[19ch] text-[clamp(1.5rem,3.2vw,2.3rem)] font-normal leading-[1.12] tracking-[-0.03em] text-balance text-murekkep">
-              Başlamadan önce bir ön fikir.
+              Çatınıza ne sığar, üç soruda görün.
             </h2>
             <p className="mt-7 max-w-[52ch] text-[1.02rem] leading-relaxed text-murekkep-ikincil">
-              Tesisinizin türü, yıllık elektrik tüketiminiz ve çatı alanınızdan yola
-              çıkarak çatınıza yaklaşık kaç panel yerleştirilebileceğini ve tahmini
-              yıllık üretimi gösterir. Sonucu görmek için kayıt gerekmez.
+              Tesis tipinizi, yıllık elektrik tüketiminizi ve çatı alanınızı girin;
+              yaklaşık panel sayısını, kurulabilir gücü ve tahmini yıllık üretimi
+              hemen ekranda görün. Kayıt yok, form yok, bekleme yok.
             </p>
             <p className="mt-4 max-w-[52ch] text-[0.94rem] leading-relaxed text-[#7c8a73]">
-              Araç yalnız bu üç veriyle çalışır; çatının yönü, gölgelenme durumu ve
-              taşıma kapasitesi hesaba katılmaz. Bunlar yerinde keşifte belirlenir.
-              SelfCheck bir ön değerlendirmedir, fizibilite raporu değildir.
+              Sonuç bir ön değerlendirmedir. Çatının yönü, gölgelenme ve taşıma
+              kapasitesi yerinde keşifte ölçülür.
             </p>
             <p className="mt-8">
               <Baglanti href="/hesapla">SelfCheck&apos;i açın</Baglanti>
@@ -264,6 +269,21 @@ export default function AnaSayfa() {
                 </p>
               </div>
             </div>
+          </Beliren>
+        </div>
+      </section>
+
+      {/* ═══ Sık sorulanlar ═══ */}
+      <section className="border-t border-[#e4e7e0]">
+        <div className="mx-auto max-w-[1180px] px-6 py-20 sm:px-10 sm:py-28">
+          <Beliren>
+            <Etiket>Sık sorulanlar</Etiket>
+            <h2 className="max-w-[22ch] text-[clamp(1.5rem,3.2vw,2.3rem)] font-normal leading-[1.12] tracking-[-0.03em] text-balance text-murekkep">
+              Kurulum öncesi en çok sorulanlar.
+            </h2>
+          </Beliren>
+          <Beliren gecikme={1}>
+            <Sorular />
           </Beliren>
         </div>
       </section>
