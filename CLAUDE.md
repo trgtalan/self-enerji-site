@@ -25,16 +25,13 @@ kurulmaz.
 
 **Ne yapılıyor:** Çatıya anahtar teslim güneş enerjisi kurulumu. İzin ve mevzuat
 süreçlerini işletme yürütüyor. Mahsuplaşma danışmanlığı veriliyor. Keşif yerinde
-ve ücretsiz. Fiyatlandırma şeffaf. Ekipman garantili.
+ve ücretsiz. Ekipman garantili. **Müşteri:** öncelikle ev sahibi; ticarethane ve
+sanayi sonra.
 
-**Müşteri:** Öncelikle ev sahibi. Ticarethane ve sanayi sonra gelir.
-
-**Müşterinin sitede sorduğu şeyler:** Maliyet neye göre belirlenir · Çatım uygun
-mu · Hangi izinler, ne kadar sürer · Kendini ne zaman amorti eder.
-
-Kışın/bulutlu günde üretim ve bakım soruları **siteye girmez** — bunlar satış
-öncesi engel değil, keşif ve teklif aşamasının konusudur. Siteye konursa sayfa
-teknik SSS'ye döner.
+**Sitede cevaplanan sorular:** Maliyet neye göre belirlenir · Çatım uygun mu ·
+Hangi izinler, ne kadar sürer · Kendini ne zaman amorti eder. Kışın/bulutlu günde
+üretim ve bakım soruları **siteye girmez** — satış öncesi engel değil, keşif ve
+teklif aşamasının konusu; sayfa yoksa teknik SSS'ye döner.
 
 **Uygunluğu belirleyen:** Çatı yönü · gölgelenme · çatının yaşı ve taşıma
 kapasitesi · yıllık elektrik tüketimi · elektrikli araç veya ısı pompası planı.
@@ -92,11 +89,21 @@ koyu zeminde yeşil gezegen, Canvas 2D güneş.
 
 ## Ana sayfa — kuruldu, metni geçici
 
-Altı bölüm: açılış → firma → süreç → maliyet → SelfCheck → keşif/iletişim.
+Yedi bölüm: açılış → firma → **sistem şeması** → süreç → maliyet → SelfCheck →
+keşif/iletişim.
 
-**SelfCheck sayfanın konusu değil, bir bölümü.** Ana sayfa normal bir enerji
-firmasının sayfası gibi görünür. Sıra üç bağımsız model incelemesiyle doğrulandı:
-araç geriye, keşif talebi öne. Kapanışın eylemi keşif talebidir, araç değil.
+**SelfCheck sayfanın konusu değil, bir bölümü.** Sıra üç bağımsız model
+incelemesiyle doğrulandı: araç geriye, keşif talebi öne. Kapanışın eylemi keşif
+talebidir, araç değil.
+
+Görsel elemanlar — fotoğraf olmadığı için hepsi çizim ve yapı: `SistemSemasi.tsx`
+(güneşten şebekeye enerji yolu, akış animasyonlu), dört sütunlu kapsam ızgarası,
+numaralı süreç ızgarası, maliyet değişkenleri tablosu, SelfCheck arayüz önizlemesi,
+tam genişlik yeşil kapanış yüzeyi.
+
+`Beliren` kaydırmayla belirme sağlar — **CSS `animation-timeline: view()`, JS yok.**
+IntersectionObserver ile yapılsaydı içerik JS gelene kadar görünmezdi; desteklemeyen
+tarayıcıda içerik doğrudan görünür kalıyor.
 
 **Metin karara bağlanmadı** — cümleler öneri. Ev fotoğrafı yok.
 

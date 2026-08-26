@@ -43,3 +43,33 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .marka-animasyon .kat { transform: none; animation: none; }
 }
+
+/* Sistem şemasındaki akan enerji — hareket azaltma tercihinde durur.
+   SVG <animate> CSS ile durdurulamadığı için noktalar gizleniyor. */
+@media (prefers-reduced-motion: reduce) {
+  .akis { display: none; }
+}
+
+/* Kaydırmayla belirme — scroll-driven animation, JS yok.
+   Desteklenmeyen tarayıcıda içerik doğrudan görünür kalır; bozulma olmaz.
+   Bu yüzden başlangıç durumu "gizli" DEĞİL: gizlilik yalnız animasyonun
+   ilk karesinde var. */
+@keyframes belir {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .belir {
+      animation: belir linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 24%;
+    }
+    /* ızgarada sıralı belirme — her kademe biraz daha geç tamamlanır */
+    .belir-0 { animation-range: entry 0% cover 24%; }
+    .belir-1 { animation-range: entry 0% cover 30%; }
+    .belir-2 { animation-range: entry 0% cover 36%; }
+    .belir-3 { animation-range: entry 0% cover 42%; }
+  }
+}
