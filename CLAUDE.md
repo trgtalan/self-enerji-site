@@ -10,11 +10,37 @@ güncellenir, elle düzenlenmez. Sürüme özgü API bilgisi için
 ## Ne
 
 İşletmenin web sitesi. Yeni bir işletme değil — aynı işin yeniden kurulan sitesi.
-İçerik ve yapı `proje-envanteri.md`'de çıkarılmış durumda; metin oradan uyarlanarak
-bu projede yeniden yazılır.
 
-**Eski projenin kaynak kodu, `.claude/` klasörü, talimat dosyaları ve komutları
-hiçbir şekilde kopyalanmaz.** Bayat.
+**Eski siteden yalnız felsefe alınır, görüntü alınmaz.** Kaynak kod, `.claude/`
+klasörü, talimat dosyaları, bölüm sırası, bileşen isimleri, metinler ve tasarım
+kararları kopyalanmaz. `notlar/eski-site-envanteri.md` **şartname değildir** —
+yalnızca işletmenin ne yaptığını hatırlatan bir kayıttır; oradan sayfa kurulmaz.
+
+## Felsefe — alınan tek şey
+
+İşin kendisi hakkında doğru olan, tasarımdan bağımsız duran maddeler:
+
+**Ne yapılıyor:** Çatıya anahtar teslim güneş enerjisi kurulumu. İzin ve mevzuat
+süreçleri işletme tarafından yürütülüyor. Mahsuplaşma danışmanlığı veriliyor.
+Keşif yerinde ve ücretsiz. Fiyatlandırma şeffaf. Ekipman garantili.
+
+**Müşteri kim:** Öncelikle ev sahibi. Ticarethane ve sanayi sonra gelir.
+
+**Müşterinin gerçekte sorduğu şeyler:** Maliyeti ne kadar · Çatım uygun mu ·
+Kışın ve bulutlu günde üretim olur mu · Hangi izinler, ne kadar sürer ·
+Bakım gerekir mi · Kendini ne zaman amorti eder.
+
+**Uygunluğu belirleyen şeyler:** Çatı yönü · gölgelenme · çatının yaşı ve taşıma
+kapasitesi · yıllık elektrik tüketimi · elektrikli araç veya ısı pompası planı.
+
+**Ton:** İlk sürümde doğrulanmamış rakam yok. Kapasite, referans ve kurulum
+sayısı verisi henüz derlenmedi.
+
+**İletişim:** WhatsApp ve e-posta. Telefon, adres ve Instagram henüz yok;
+yer tutucu konmuyor.
+
+Bunun dışındaki her şey — bölüm sırası, başlıklar, hero kurgusu, kart yapısı,
+sekmeler, "SelfCheck" adı — **eski sitenin görüntüsüdür ve devralınmaz.**
 
 ## Görev dağılımı
 
@@ -26,15 +52,13 @@ ve ilk sürüm için gerekli değil.
 
 ## İlk sürümün kapsamı
 
-Sayı içeren her şey ertelendi (`proje-envanteri.md` → *Şimdi kurulmayacaklar*):
-hesaplayıcı (`/hesapla`), Örnek Hesaplama sekmesi, ve hesaplayıcıya bağlanan her
-öğe — Header'daki *Hesaplayıcı*, IntroCards'ın 2. kartı, Hero ve FinalCta'daki
-hesaplayıcı çağrıları. Var olmayan sayfaya link kurulmaz, "yakında" yazısı konmaz.
+**Sayfa yapısı henüz kararsız.** Eski envanterdeki sıra (Header → Hero →
+IntroCards → HowItWorks → WhyUs → Faq → FinalCta → Footer) devralınmadı;
+yeni yapı yukarıdaki felsefeden kurulacak.
 
-Referanslar da ertelendi — veri derlenmedi.
-
-Kurulan: Header (*Hizmetler · İletişim*) → HeroSahne → IntroCards (2 kart) →
-HowItWorks (2 sekme) → WhyUs → Faq → FinalCta → Footer.
+Değişmeyen kısıt: **ilk sürümde doğrulanmamış rakam yok.** Hesap üreten her
+şey ertelendi. Referanslar da ertelendi — veri derlenmedi. Var olmayan sayfaya
+link kurulmaz, "yakında" yazısı konmaz.
 
 ## Marka — karara bağlandı
 
