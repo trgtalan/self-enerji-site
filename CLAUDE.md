@@ -3,6 +3,10 @@
 Ortak kurallar `~/.claude/CLAUDE.md` içindeki `aiw` bloğundan gelir. Burada yalnız
 bu projeye özgü olan var. Satır tavanı 160.
 
+**Kapsam:** Bu depo sitenin kurulması ve yayına alınmasıyla ilgilenir. KVKK metni,
+hesap formülleri, mevzuat araştırması gibi işler ayrı oturumlarda üretilir ve
+**dosya olarak** gelir; burada yeniden araştırılmaz.
+
 Next'in kendi kılavuzu @AGENTS.md — `next dev` üretir, elle düzenlenmez. Sürüme
 özgü API için `node_modules/next/dist/docs/` okunur; ezberden Next kodu yazılmaz.
 
@@ -23,9 +27,12 @@ ve ücretsiz. Fiyatlandırma şeffaf. Ekipman garantili.
 
 **Müşteri:** Öncelikle ev sahibi. Ticarethane ve sanayi sonra gelir.
 
-**Müşterinin sorduğu altı şey:** Maliyeti ne kadar · Çatım uygun mu · Kışın ve
-bulutlu günde üretim olur mu · Hangi izinler, ne kadar sürer · Bakım gerekir mi ·
-Kendini ne zaman amorti eder.
+**Müşterinin sitede sorduğu şeyler:** Maliyet neye göre belirlenir · Çatım uygun
+mu · Hangi izinler, ne kadar sürer · Kendini ne zaman amorti eder.
+
+Kışın/bulutlu günde üretim ve bakım soruları **siteye girmez** — bunlar satış
+öncesi engel değil, keşif ve teklif aşamasının konusudur. Siteye konursa sayfa
+teknik SSS'ye döner.
 
 **Uygunluğu belirleyen:** Çatı yönü · gölgelenme · çatının yaşı ve taşıma
 kapasitesi · yıllık elektrik tüketimi · elektrikli araç veya ısı pompası planı.
@@ -33,6 +40,11 @@ kapasitesi · yıllık elektrik tüketimi · elektrikli araç veya ısı pompas�
 **Ton:** Doğrulanmamış rakam yok — kapasite, referans, kurulum sayısı, tasarruf
 oranı, amorti süresi hiçbiri elde değil. Var olmayan sayfaya link kurulmaz,
 "yakında" yazılmaz, yer tutucu konmaz.
+
+**Fiyat sitede verilmez — karara bağlandı.** Premium mühendislik hizmeti satılıyor;
+her sistem kendine hastır, dolayısıyla her sistemin bedeli farklıdır. Fiyat yalnız
+ücretsiz keşiften sonra verilir. "Ortalama yatırım aralığı", "başlangıç paketi" ve
+benzeri fiyat çapası önerileri **reddedildi**, tekrar önerilmez.
 
 ## Marka — karara bağlandı
 
