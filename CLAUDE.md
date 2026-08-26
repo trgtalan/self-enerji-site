@@ -36,6 +36,35 @@ Referanslar da ertelendi — veri derlenmedi.
 Kurulan: Header (*Hizmetler · İletişim*) → HeroSahne → IntroCards (2 kart) →
 HowItWorks (2 sekme) → WhyUs → Faq → FinalCta → Footer.
 
+## Marka — karara bağlandı
+
+**Y6 yönü onaylandı** (25 Ağustos 2026): yuvarlatılmış origami. Mevcut logonun üç
+katı ve hareketi korundu, köşelere yarıçap verildi, keskin uç kaldırıldı. Üst
+kattaki teal atılmadı — kasıtlı bir renk kararına dönüştü.
+
+Renkler logodan ölçüldü, seçilmedi. `globals.css` içinde `@theme` belirteçleri:
+
+| | |
+|---|---|
+| `--color-marka-teal` | `#12494e` — üst kat, koyu metin |
+| `--color-marka-yesil` | `#5aa03a` — orta kat |
+| `--color-marka-acik` | `#a8e87f` — alt kat |
+| `--color-zemin-koyu` | `#0d2f33` — Hero zemini, teal'den türetildi |
+
+Varlıklar: `public/marka/self-isaret.svg` (tam renk), `self-isaret-tek-renk.svg`
+(`currentColor` — kaşe, tek renk baskı), `self-ikon.svg` (kap sürümü).
+Favicon `src/app/icon.svg`. Bileşen: `src/components/Logo.tsx` — `Isaret` ve `Kilit`.
+
+Açılma animasyonu üç katı sırayla açar; `prefers-reduced-motion` açıkken logo son
+hâliyle durur.
+
+**Henüz kararsız:** yazı tipi. `Kilit` bileşenindeki "SELF ENERJİ" şimdilik sistem
+yığınıyla diziliyor. Matbaa için yazısı outline'lanmış kilit dosyası, yazı tipi
+seçildikten sonra üretilir.
+
+Orijinal PNG `public/marka/self-logo.png` olarak duruyor — karşılaştırma için,
+sitede kullanılmıyor.
+
 ## Bekleyen karar — kullanıcınındır
 
 1. **Hero slayt 1.** Başlığı da CTA'sı da hesaplayıcıya dayanıyor, hesaplayıcı
