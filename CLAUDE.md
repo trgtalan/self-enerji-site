@@ -112,11 +112,36 @@ konmuyor. Fotoğraf geldiğinde bölüm carousel'e döner; tek sahne olduğu iç
 öğrenin" yazıyor; `/hesapla` anında sonuç üretmediği için "anında" çıkarıldı.
 Hesap mantığı geldiğinde geri konabilir.
 
+## Tasarım sistemi — `DESIGN.md`
+
+Sitenin tasarım dili `DESIGN.md`'de yazılı (BlueYard Capital referansı, kullanıcı
+tarafından verildi). **Tema: light.** Beyaz tuval, grafit mürekkep `#3a3a3e`,
+Instrument Sans, sıfır köşe yarıçapı, gölge yok. Renk yalnız kart yüzeyinde ve
+saç teli çizgide; buton rengi yok — hayalet buton kullanılıyor.
+
+**Bilinen çelişki, karar bekliyor:** DESIGN.md paleti (şeftali, lavanta, füşya,
+grafit) marka yeşiliyle akraba değil. Şimdilik yeşil yalnız logoda; sayfa
+DESIGN.md paletiyle yürüyor. Alternatif: şeftalinin yerini marka yeşili alır.
+
+## Açılış görseli — canlı güneş
+
+Hero'da Canvas 2D ile çizilen bir güneş var. Kütüphane ve görsel dosyası yok.
+Merkez beyaz-sıcak, kenar koyu — limb darkening, güneşin gerçek gözlemlenen
+özelliği. Yüzey granül hücrelerden oluşuyor, korona ışınları diskin dışına
+taşıyor. Hareket azaltma tercihinde animasyon durur.
+
+Bir önceki deneme (koyu zeminde yeşil gezegen) kullanıcı tarafından reddedildi.
+
 ## Bekleyen kararlar — kullanıcınındır
 
-1. **Yazı tipi.** Şimdilik Manrope (`latin-ext` alt kümesiyle, Türkçe için
-   zorunlu). Geçici — marka yazı tipi kararı verilmedi.
-2. **Hero fotoğrafı.** Slayt 2 için gerçek kurulum fotoğrafı gerekiyor.
+1. **Palet çelişkisi.** Yukarıda yazılı.
+2. **Yazı tipi.** DESIGN.md Instrument Sans diyor. Türkçe için `latin-ext`
+   alt kümesi zorunlu.
+3. **Güneşin boyutu, yeri ve etkileşimi.**
+
+## WhatsApp
+
+Öne çıkarılmıyor. Bağlanacağı biliniyor, yeri geldiğinde eklenecek.
 
 ## Teknoloji — karar verildi
 
