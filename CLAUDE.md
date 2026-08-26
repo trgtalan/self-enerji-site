@@ -147,15 +147,12 @@ kısıtı ve CSP genişletmesi.
 
 ## Firma kimliği
 
-**SELF Mühendislik ve San. Tic. Ltd. Şti.** — Akdeniz/Mersin.
+**SELF Mühendislik ve San. Tic. Ltd. Şti.** — Akdeniz/Mersin. Referans ve rakam
+yokken güven buradan kurulur; üç bağımsız model incelemesi de aynı boşluğu işaret
+etti. **Kişi adı sitede görünmez**, yalnız unvan (kullanıcı kararı).
 
-Referans ve rakam yokken güven buradan kurulur: gerçek unvan, gerçek yer, gerçek
-muhatap. Üç bağımsız model incelemesi de aynı boşluğu işaret etti.
-
-**Kişi adı sitede görünmez** — yalnız unvan. Kullanıcı kararı.
-
-**Eksik:** açık adres, hizmet bölgesinin sınırı (yalnız Mersin mi, çevre iller de
-mi), sabit telefon. Yer tutucu konmaz.
+**Eksik:** açık adres, hizmet bölgesinin sınırı, sabit telefon, kurumsal e-posta.
+Yer tutucu konmaz.
 
 ## İletişim kanalları
 
