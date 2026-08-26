@@ -149,8 +149,10 @@ eklenirse çerez onayı da gerekir. Ondan önce siteye eklenmez.
 Referans ve rakam yokken güven buradan kurulur: gerçek unvan, gerçek yer, gerçek
 muhatap. Üç bağımsız model incelemesi de aynı boşluğu işaret etti.
 
-**Eksik:** muhatap mühendisin adı ve unvanı, açık adres, hizmet bölgesinin sınırı
-(yalnız Mersin mi, çevre iller de mi), sabit telefon. Yer tutucu konmaz.
+**Kişi adı sitede görünmez** — yalnız unvan. Kullanıcı kararı.
+
+**Eksik:** açık adres, hizmet bölgesinin sınırı (yalnız Mersin mi, çevre iller de
+mi), sabit telefon. Yer tutucu konmaz.
 
 ## İletişim kanalları
 
