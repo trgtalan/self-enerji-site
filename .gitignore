@@ -56,3 +56,6 @@ next-env.d.ts
 *.p12
 id_rsa*
 id_ed25519*
+
+# ayri oturumlarda yurutulen isler — yerelde kalir, git dışına
+isler/
