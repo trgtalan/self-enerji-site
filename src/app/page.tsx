@@ -9,24 +9,23 @@ import { Sorular } from "@/components/Sorular";
    Sıra üç bağımsız model incelemesiyle doğrulandı: araç geriye, keşif öne.
    Metin karara bağlanmadı. */
 
-const KAPSAM = [
+const CATILAR = [
   {
-    baslik: "Projelendirme",
-    metin: "Çatıya ve tüketime göre sistem tasarımı, ekipman seçimi ve teknik proje.",
+    baslik: "Müstakil konut",
+    metin:
+      "Sistem yıllık tüketiminize göre boyutlandırılır. Gündüz üretilen elektrik doğrudan evde kullanılır, fazlası mahsuplaşmaya girer.",
   },
   {
-    baslik: "İzin ve mevzuat",
-    metin: "Dağıtım şirketi başvurusu, proje onayı ve kabul süreçlerinin takibi.",
+    baslik: "Apartman ve site",
+    metin:
+      "Ortak çatı, kat maliklerinin yazılı onayını gerektirir. Ortak alan tüketiminin nasıl karşılanacağı baştan netleştirilir.",
   },
   {
-    baslik: "Kurulum",
-    metin: "Montaj, elektrik işleri ve devreye alma — tek ekip.",
+    baslik: "Atölye ve işletme",
+    metin:
+      "Trapez sac ve sandviç panel çatılar kuruluma uygundur. Gündüz çalışan bir işletme ürettiğinin neredeyse tamamını doğrudan tüketir.",
   },
-  {
-    baslik: "Mahsuplaşma",
-    metin: "Üretilen elektriğin faturaya nasıl yansıyacağı konusunda danışmanlık.",
-  },
-];
+]
 
 const SUREC = [
   {
@@ -69,9 +68,8 @@ export default function AnaSayfa() {
             </h1>
 
             <p className="mx-auto mt-7 w-full max-w-[48ch] text-center text-[clamp(0.95rem,1.4vw,1.09rem)] leading-relaxed tracking-[-0.01em] text-murekkep-ikincil">
-              Mersin ve çevresinde çatı üstü güneş enerjisi sistemleri kuruyoruz.
-              Projelendirme, izin süreçleri, kurulum ve devreye alma tek elden
-              yürütülür. Keşif yerinde ve ücretsizdir.
+              Mersin ve çevresinde konut, apartman ve işletme çatılarına güneş
+              enerjisi sistemleri kuruyoruz. Keşif yerinde ve ücretsizdir.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center justify-center gap-x-9 gap-y-3">
@@ -89,14 +87,15 @@ export default function AnaSayfa() {
             <div>
               <Etiket>Firma</Etiket>
               <h2 className="text-[clamp(1.55rem,3.4vw,2.5rem)] font-normal leading-[1.1] tracking-[-0.032em] text-balance text-murekkep">
-                Projeden devreye alınmaya kadar tek muhatap.
+                Her çatı ayrı bir sistem gerektirir.
               </h2>
             </div>
             <div className="lg:pt-11">
               <p className="text-[1.02rem] leading-relaxed text-murekkep-ikincil">
                 SELF Enerji, mühendisler tarafından kurulan bir mühendislik firmasıdır.
-                Sistemin tasarımı, dağıtım şirketiyle yürütülen başvuru ve onay
-                süreçleri, kurulum ve devreye alma aynı çatı altında yapılır.
+                Bir çatıya ne kurulabileceğini yönü, eğimi ve taşıma kapasitesi kadar
+                yapının tipi de belirler: müstakil evde tüketim profili, apartmanda
+                malik onayı, atölyede sözleşme gücü ve vardiya düzeni öne çıkar.
               </p>
               <p className="mt-5 text-[1.02rem] leading-relaxed text-murekkep-ikincil">
                 Kurulumda kullanılan ekipman garantilidir; garanti kapsamı ve koşulları
@@ -106,8 +105,8 @@ export default function AnaSayfa() {
           </div>
         </Beliren>
 
-        <div className="mt-16 grid gap-px bg-[#e4e7e0] sm:grid-cols-2 lg:grid-cols-4">
-          {KAPSAM.map((k, i) => (
+        <div className="mt-16 grid gap-px bg-[#e4e7e0] md:grid-cols-3">
+          {CATILAR.map((k, i) => (
             <Beliren key={k.baslik} gecikme={Math.min(i, 3) as 0 | 1 | 2 | 3}>
               <div className="h-full bg-white p-7 lg:p-8">
                 <span className="block h-px w-9 bg-marka-yesil" />
@@ -148,8 +147,12 @@ export default function AnaSayfa() {
         <Beliren>
           <Etiket>Süreç</Etiket>
           <h2 className="max-w-[20ch] text-[clamp(1.5rem,3.2vw,2.3rem)] font-normal leading-[1.12] tracking-[-0.03em] text-balance text-murekkep">
-            Keşiften devreye almaya.
+            Dört adım, tek muhatap.
           </h2>
+          <p className="mt-6 max-w-[54ch] text-[1.02rem] leading-relaxed text-murekkep-ikincil">
+            Projelendirme, dağıtım şirketiyle yürütülen başvurular, kurulum ve devreye
+            alma aynı çatı altında yapılır — aralarda muhatap değişmez.
+          </p>
         </Beliren>
 
         <ol className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
