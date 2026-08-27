@@ -72,10 +72,9 @@ export default function AnaSayfa() {
               enerjisi sistemleri kuruyoruz. Keşif yerinde ve ücretsizdir.
             </p>
 
-            <div className="mt-9 flex flex-wrap items-center justify-center gap-x-9 gap-y-3">
+            <p className="mt-9 text-center">
               <Baglanti href="/hesapla">Çatınızı SelfCheck ile ölçün</Baglanti>
-              <Baglanti href="#iletisim">Ücretsiz keşif talep edin</Baglanti>
-            </div>
+            </p>
           </div>
         </div>
       </header>
@@ -304,13 +303,15 @@ function Nav() {
           <NavBag href="#sorular" gizli>
             Sorular
           </NavBag>
-          <NavBag href="/hesapla">SelfCheck</NavBag>
-          <a
-            href="#iletisim"
+          <NavBag href="#iletisim" gizli>
+            Keşif talebi
+          </NavBag>
+          <Link
+            href="/hesapla"
             className="border border-murekkep px-4 py-2 text-[0.86rem] tracking-[-0.01em] text-murekkep transition-colors hover:bg-murekkep hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-murekkep"
           >
-            Keşif talebi
-          </a>
+            SelfCheck
+          </Link>
         </div>
       </div>
     </nav>
