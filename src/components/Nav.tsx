@@ -18,7 +18,7 @@ const BAGLANTILAR = [
   { ad: "SelfCheck", href: "/hesapla" },
   { ad: "Süreç", href: "#surec" },
   { ad: "Nasıl çalışır", href: "#nasil-calisir" },
-  { ad: "Sorular", href: "#sorular" },
+  { ad: "Sorular", href: "/sorular" },
   { ad: "Keşif talebi", href: "#iletisim" },
 ];
 
@@ -79,7 +79,7 @@ export function Nav() {
       <div
         aria-hidden
         onClick={() => setAcik(false)}
-        className={`fixed inset-0 z-[60] bg-murekkep/25 transition-opacity duration-300 motion-reduce:transition-none ${
+        className={`fixed inset-0 z-[60] bg-murekkep/20 transition-opacity duration-300 motion-reduce:transition-none ${
           acik ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       />
@@ -88,14 +88,14 @@ export function Nav() {
       <aside
         id="ana-menu"
         aria-label="Menü"
-        className={`fixed right-0 top-0 z-[65] flex h-full w-[min(84vw,340px)] flex-col border-l border-[#e4e7e0] bg-white transition-transform duration-300 ease-out motion-reduce:transition-none ${
+        className={`fixed right-0 top-0 z-[65] flex h-full w-[min(80vw,310px)] flex-col border-l border-[#e4e7e0] bg-white/80 backdrop-blur-xl transition-transform duration-300 ease-out motion-reduce:transition-none ${
           acik ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="h-[68px] flex-none" />
         <div className="flex flex-col overflow-y-auto px-7 pb-10 sm:px-9">
           {BAGLANTILAR.map((b, i) => {
-            const sinif = `block border-b border-[#eef0ec] py-[18px] text-[1.22rem] tracking-[-0.022em] text-murekkep transition-opacity hover:opacity-55 ${
+            const sinif = `block border-b border-[#eef0ec] py-[15px] text-[1.02rem] tracking-[-0.014em] text-murekkep transition-opacity hover:opacity-55 ${
               i === BAGLANTILAR.length - 1 ? "border-b-0" : ""
             }`;
             return b.href.startsWith("#") ? (

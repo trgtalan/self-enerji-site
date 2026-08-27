@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { Gunes } from "@/components/Gunes";
-import { Nav } from "@/components/Nav";
 import { SistemSemasi } from "@/components/SistemSemasi";
 import { Beliren } from "@/components/Beliren";
-import { Sorular } from "@/components/Sorular";
 
 /* Ana sayfa — bir enerji firmasının sayfası. SelfCheck yalnız bir bölüm.
    Sıra üç bağımsız model incelemesiyle doğrulandı: araç geriye, keşif öne.
@@ -53,8 +51,6 @@ const SUREC = [
 export default function AnaSayfa() {
   return (
     <>
-      <Nav />
-
       {/* ═══ Açılış ═══ */}
       <header className="relative h-[min(94vh,860px)] min-h-[540px] overflow-hidden">
         <Gunes className="absolute inset-0 block h-full w-full" />
@@ -222,20 +218,6 @@ export default function AnaSayfa() {
           </Beliren>
         </div>
       </section>
-      {/* ═══ Sık sorulanlar ═══ */}
-      <section id="sorular">
-        <div className="mx-auto max-w-[1180px] px-6 py-20 sm:px-10 sm:py-28">
-          <Beliren>
-            <Etiket>Sık sorulanlar</Etiket>
-            <h2 className="max-w-[22ch] text-[clamp(1.5rem,3.2vw,2.3rem)] font-normal leading-[1.12] tracking-[-0.03em] text-balance text-murekkep">
-              Kurulum öncesi en çok sorulanlar.
-            </h2>
-          </Beliren>
-          <Beliren gecikme={1}>
-            <Sorular />
-          </Beliren>
-        </div>
-      </section>
       {/* ═══ Kapanış ═══ */}
       <section id="iletisim" className="bg-murekkep">
         <div className="mx-auto max-w-[1180px] px-6 py-24 sm:px-10 sm:py-32">
@@ -266,11 +248,7 @@ export default function AnaSayfa() {
           </Beliren>
         </div>
       </section>
-<footer className="mx-auto flex max-w-[1180px] flex-wrap items-baseline justify-between gap-3 px-6 py-8 text-[0.83rem] text-[#7c8a73] sm:px-10">
-        <span>SELF Mühendislik ve San. Tic. Ltd. Şti.</span>
-        <span>Akdeniz, Mersin</span>
-      </footer>
-    </>
+</>
   );
 }
 
