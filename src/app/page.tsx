@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Gunes } from "@/components/Gunes";
-import { Kilit } from "@/components/Logo";
+import { Isaret } from "@/components/Logo";
+import { Nav } from "@/components/Nav";
 import { SistemSemasi } from "@/components/SistemSemasi";
 import { Beliren } from "@/components/Beliren";
 import { Sorular } from "@/components/Sorular";
@@ -55,36 +56,28 @@ export default function AnaSayfa() {
     <>
       <Nav />
 
-      {/* ═══ Açılış ═══ */}
-      <header className="relative h-[min(96vh,880px)] min-h-[540px] overflow-hidden">
+      {/* ═══ Açılış — yalnız marka ═══ */}
+      <header className="relative h-[min(94vh,860px)] min-h-[520px] overflow-hidden">
         <Gunes className="absolute inset-0 block h-full w-full" />
 
-        <div className="relative z-10 mx-auto flex h-full max-w-[1180px] flex-col px-6 sm:px-10">
-          <div className="h-[70px] sm:h-[78px]" />
-
-          <div className="mt-[4vh] sm:mt-[5vh]">
-            <h1 className="mx-auto max-w-[19ch] text-center text-[clamp(1.75rem,5vw,3.4rem)] font-normal leading-[1.03] tracking-[-0.034em] text-balance text-murekkep">
-              Çatı üstü güneş enerjisi — projelendirmeden devreye almaya.
-            </h1>
-
-            <p className="mx-auto mt-7 w-full max-w-[48ch] text-center text-[clamp(0.95rem,1.4vw,1.09rem)] leading-relaxed tracking-[-0.01em] text-murekkep-ikincil">
-              Mersin ve çevresinde konut, apartman ve işletme çatılarına güneş
-              enerjisi sistemleri kuruyoruz. Keşif yerinde ve ücretsizdir.
-            </p>
-
-            <p className="mt-9 text-center">
-              <Baglanti href="/hesapla">Çatınızı SelfCheck ile ölçün</Baglanti>
-            </p>
-          </div>
+        <div className="relative z-10 flex h-full flex-col items-center justify-start px-6 pt-[24vh] sm:pt-[26vh]">
+          <h1 className="flex flex-col items-center gap-3">
+            <span aria-hidden className="block">
+              <Isaret yukseklik={124} animasyonlu />
+            </span>
+            <span className="text-center text-[clamp(1.45rem,5vw,2.6rem)] font-semibold leading-none tracking-[0.26em] sm:tracking-[0.32em]">
+              <span className="text-murekkep">SELF</span>{" "}
+              <span className="font-medium text-marka-koyu">ENERJİ</span>
+            </span>
+          </h1>
         </div>
       </header>
-
-      {/* ═══ Firma ═══ */}
-      <section className="mx-auto max-w-[1180px] px-6 py-20 sm:px-10 sm:py-28">
+      {/* ═══ Hakkımızda ═══ */}
+      <section id="hakkimizda" className="mx-auto max-w-[1180px] px-6 py-20 sm:px-10 sm:py-28">
         <Beliren>
           <div className="grid gap-x-16 gap-y-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1fr)]">
             <div>
-              <Etiket>Firma</Etiket>
+              <Etiket>Hakkımızda</Etiket>
               <h2 className="text-[clamp(1.55rem,3.4vw,2.5rem)] font-normal leading-[1.1] tracking-[-0.032em] text-balance text-murekkep">
                 Her çatı ayrı bir sistem gerektirir.
               </h2>
@@ -120,62 +113,8 @@ export default function AnaSayfa() {
           ))}
         </div>
       </section>
-
-      {/* ═══ Sistem şeması ═══ */}
-      <section id="nasil-calisir" className="border-y border-[#e4e7e0] bg-[#fbfaf7]">
-        <div className="mx-auto max-w-[1180px] px-6 py-20 sm:px-10 sm:py-24">
-          <Beliren>
-            <div className="max-w-[54ch]">
-              <Etiket>Nasıl çalışır</Etiket>
-              <h2 className="text-[clamp(1.5rem,3.2vw,2.3rem)] font-normal leading-[1.12] tracking-[-0.03em] text-balance text-murekkep">
-                Çatıda üretilen elektrik, evinizde kullanılır; fazlası şebekeye gider.
-              </h2>
-            </div>
-          </Beliren>
-
-          <Beliren gecikme={1}>
-            <div className="mt-12">
-              <SistemSemasi />
-            </div>
-          </Beliren>
-        </div>
-      </section>
-
-      {/* ═══ Süreç ═══ */}
-      <section id="surec" className="mx-auto max-w-[1180px] px-6 py-20 sm:px-10 sm:py-28">
-        <Beliren>
-          <Etiket>Süreç</Etiket>
-          <h2 className="max-w-[20ch] text-[clamp(1.5rem,3.2vw,2.3rem)] font-normal leading-[1.12] tracking-[-0.03em] text-balance text-murekkep">
-            Dört adım, tek muhatap.
-          </h2>
-          <p className="mt-6 max-w-[54ch] text-[1.02rem] leading-relaxed text-murekkep-ikincil">
-            Projelendirme, dağıtım şirketiyle yürütülen başvurular, kurulum ve devreye
-            alma aynı çatı altında yapılır — aralarda muhatap değişmez.
-          </p>
-        </Beliren>
-
-        <ol className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-          {SUREC.map((adim, i) => (
-            <li key={adim.baslik} className={`relative belir belir-${Math.min(i, 3)}`}>
-              <div className="flex items-center gap-3">
-                <span className="text-[0.78rem] font-medium tabular-nums text-marka-koyu">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="h-px flex-1 bg-[#e4e7e0]" />
-              </div>
-              <h3 className="mt-5 text-[1.12rem] font-medium tracking-[-0.022em] text-murekkep">
-                {adim.baslik}
-              </h3>
-              <p className="mt-2.5 text-[0.94rem] leading-relaxed text-murekkep-ikincil">
-                {adim.metin}
-              </p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
       {/* ═══ SelfCheck ═══ */}
-      <section className="border-y border-[#e4e7e0] bg-[#fbfaf7]">
+      <section id="selfcheck" className="border-y border-[#e4e7e0] bg-[#fbfaf7]">
         <div className="mx-auto grid max-w-[1180px] items-center gap-x-16 gap-y-12 px-6 py-20 sm:px-10 sm:py-28 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)]">
           <Beliren>
             <Etiket>SelfCheck</Etiket>
@@ -227,7 +166,57 @@ export default function AnaSayfa() {
           </Beliren>
         </div>
       </section>
+      {/* ═══ Süreç ═══ */}
+      <section id="surec" className="mx-auto max-w-[1180px] px-6 py-20 sm:px-10 sm:py-28">
+        <Beliren>
+          <Etiket>Süreç</Etiket>
+          <h2 className="max-w-[20ch] text-[clamp(1.5rem,3.2vw,2.3rem)] font-normal leading-[1.12] tracking-[-0.03em] text-balance text-murekkep">
+            Dört adım, tek muhatap.
+          </h2>
+          <p className="mt-6 max-w-[54ch] text-[1.02rem] leading-relaxed text-murekkep-ikincil">
+            Projelendirme, dağıtım şirketiyle yürütülen başvurular, kurulum ve devreye
+            alma aynı çatı altında yapılır — aralarda muhatap değişmez.
+          </p>
+        </Beliren>
 
+        <ol className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+          {SUREC.map((adim, i) => (
+            <li key={adim.baslik} className={`relative belir belir-${Math.min(i, 3)}`}>
+              <div className="flex items-center gap-3">
+                <span className="text-[0.78rem] font-medium tabular-nums text-marka-koyu">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="h-px flex-1 bg-[#e4e7e0]" />
+              </div>
+              <h3 className="mt-5 text-[1.12rem] font-medium tracking-[-0.022em] text-murekkep">
+                {adim.baslik}
+              </h3>
+              <p className="mt-2.5 text-[0.94rem] leading-relaxed text-murekkep-ikincil">
+                {adim.metin}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </section>
+      {/* ═══ Sistem şeması ═══ */}
+      <section id="nasil-calisir" className="border-y border-[#e4e7e0] bg-[#fbfaf7]">
+        <div className="mx-auto max-w-[1180px] px-6 py-20 sm:px-10 sm:py-24">
+          <Beliren>
+            <div className="max-w-[54ch]">
+              <Etiket>Nasıl çalışır</Etiket>
+              <h2 className="text-[clamp(1.5rem,3.2vw,2.3rem)] font-normal leading-[1.12] tracking-[-0.03em] text-balance text-murekkep">
+                Çatıda üretilen elektrik, evinizde kullanılır; fazlası şebekeye gider.
+              </h2>
+            </div>
+          </Beliren>
+
+          <Beliren gecikme={1}>
+            <div className="mt-12">
+              <SistemSemasi />
+            </div>
+          </Beliren>
+        </div>
+      </section>
       {/* ═══ Sık sorulanlar ═══ */}
       <section id="sorular">
         <div className="mx-auto max-w-[1180px] px-6 py-20 sm:px-10 sm:py-28">
@@ -242,7 +231,6 @@ export default function AnaSayfa() {
           </Beliren>
         </div>
       </section>
-
       {/* ═══ Kapanış ═══ */}
       <section id="iletisim" className="bg-murekkep">
         <div className="mx-auto max-w-[1180px] px-6 py-24 sm:px-10 sm:py-32">
@@ -273,8 +261,7 @@ export default function AnaSayfa() {
           </Beliren>
         </div>
       </section>
-
-      <footer className="mx-auto flex max-w-[1180px] flex-wrap items-baseline justify-between gap-3 px-6 py-8 text-[0.83rem] text-[#7c8a73] sm:px-10">
+<footer className="mx-auto flex max-w-[1180px] flex-wrap items-baseline justify-between gap-3 px-6 py-8 text-[0.83rem] text-[#7c8a73] sm:px-10">
         <span>SELF Mühendislik ve San. Tic. Ltd. Şti.</span>
         <span>Akdeniz, Mersin</span>
       </footer>
@@ -283,64 +270,6 @@ export default function AnaSayfa() {
 }
 
 /* ——— sayfa içi yardımcılar ——— */
-
-/** Üst çubuk — sayfayla birlikte yapışır. Menü açma düğmesi yok: dar ekranda
-    ikincil bağlantılar gizlenir, birincil ikisi kalır. */
-function Nav() {
-  return (
-    <nav className="sticky top-0 z-50 border-b border-[#e4e7e0]/70 bg-white/85 backdrop-blur-md">
-      <div className="mx-auto flex h-[70px] max-w-[1180px] items-center justify-between gap-6 px-6 sm:h-[78px] sm:px-10">
-        <a href="#" aria-label="SELF Enerji — sayfa başı" className="flex-none">
-          <Kilit yukseklik={34} />
-        </a>
-        <div className="flex items-center gap-6 sm:gap-8">
-          <NavBag href="#nasil-calisir" gizli>
-            Nasıl çalışır
-          </NavBag>
-          <NavBag href="#surec" gizli>
-            Süreç
-          </NavBag>
-          <NavBag href="#sorular" gizli>
-            Sorular
-          </NavBag>
-          <NavBag href="#iletisim" gizli>
-            Keşif talebi
-          </NavBag>
-          <Link
-            href="/hesapla"
-            className="border border-murekkep px-4 py-2 text-[0.86rem] tracking-[-0.01em] text-murekkep transition-colors hover:bg-murekkep hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-murekkep"
-          >
-            SelfCheck
-          </Link>
-        </div>
-      </div>
-    </nav>
-  );
-}
-
-function NavBag({
-  href,
-  children,
-  gizli,
-}: {
-  href: string;
-  children: React.ReactNode;
-  /** dar ekranda gizlenir */
-  gizli?: boolean;
-}) {
-  const sinif = `text-[0.9rem] tracking-[-0.01em] text-murekkep-ikincil transition-colors hover:text-murekkep focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-murekkep${
-    gizli ? " hidden md:inline" : ""
-  }`;
-  return href.startsWith("#") ? (
-    <a href={href} className={sinif}>
-      {children}
-    </a>
-  ) : (
-    <Link href={href} className={sinif}>
-      {children}
-    </Link>
-  );
-}
 
 function Etiket({ children }: { children: React.ReactNode }) {
   return (
