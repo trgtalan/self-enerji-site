@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Gunes } from "@/components/Gunes";
-import { Isaret } from "@/components/Logo";
 import { Nav } from "@/components/Nav";
 import { SistemSemasi } from "@/components/SistemSemasi";
 import { Beliren } from "@/components/Beliren";
@@ -56,22 +55,28 @@ export default function AnaSayfa() {
     <>
       <Nav />
 
-      {/* ═══ Açılış — yalnız marka ═══ */}
-      <header className="relative h-[min(94vh,860px)] min-h-[520px] overflow-hidden">
+      {/* ═══ Açılış ═══ */}
+      <header className="relative h-[min(94vh,860px)] min-h-[540px] overflow-hidden">
         <Gunes className="absolute inset-0 block h-full w-full" />
 
-        <div className="relative z-10 flex h-full flex-col items-center justify-start px-6 pt-[24vh] sm:pt-[26vh]">
-          <h1 className="flex flex-col items-center gap-3">
-            <span aria-hidden className="block">
-              <Isaret yukseklik={124} animasyonlu />
-            </span>
-            <span className="text-center text-[clamp(1.45rem,5vw,2.6rem)] font-semibold leading-none tracking-[0.26em] sm:tracking-[0.32em]">
-              <span className="text-murekkep">SELF</span>{" "}
-              <span className="font-medium text-marka-koyu">ENERJİ</span>
-            </span>
-          </h1>
+        <div className="relative z-10 mx-auto flex h-full max-w-[1180px] flex-col px-6 sm:px-10">
+          <div className="mt-[13vh] sm:mt-[15vh]">
+            <h1 className="mx-auto max-w-[19ch] text-center text-[clamp(1.75rem,5vw,3.4rem)] font-normal leading-[1.03] tracking-[-0.034em] text-balance text-murekkep">
+              Çatı üstü güneş enerjisi — projelendirmeden devreye almaya.
+            </h1>
+
+            <p className="mx-auto mt-7 w-full max-w-[48ch] text-center text-[clamp(0.95rem,1.4vw,1.09rem)] leading-relaxed tracking-[-0.01em] text-murekkep-ikincil">
+              Mersin ve çevresinde konut, apartman ve işletme çatılarına güneş
+              enerjisi sistemleri kuruyoruz. Keşif yerinde ve ücretsizdir.
+            </p>
+
+            <p className="mt-9 text-center">
+              <Baglanti href="/hesapla">Çatınızı SelfCheck ile ölçün</Baglanti>
+            </p>
+          </div>
         </div>
       </header>
+
       {/* ═══ Hakkımızda ═══ */}
       <section id="hakkimizda" className="mx-auto max-w-[1180px] px-6 py-20 sm:px-10 sm:py-28">
         <Beliren>

@@ -2,9 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { Kilit } from "@/components/Logo";
 
 /**
- * Üst çubuk — yalnız menü düğmesi. Marka açılışta duruyor, burada tekrarlanmıyor.
+ * Üst çubuk — solda marka, sağda menü düğmesi.
  *
  * İstemci bileşeni: menünün bağlantıya tıklayınca, dışarı tıklayınca ve Esc ile
  * kapanması gerekiyor. Bunlar `<details>` ile yapılamıyordu — menü açık kalıyordu.
@@ -39,7 +40,10 @@ export function Nav() {
 
   return (
     <nav className="sticky top-0 z-50 border-b border-[#e4e7e0]/70 bg-white/85 backdrop-blur-md">
-      <div className="mx-auto flex h-[64px] max-w-[1180px] items-center justify-end px-6 sm:px-10">
+      <div className="mx-auto flex h-[68px] max-w-[1180px] items-center justify-between px-6 sm:px-10">
+        <a href="#" aria-label="Self Enerji — sayfa başı" className="flex-none">
+          <Kilit yukseklik={32} />
+        </a>
         <div ref={kutu} className="relative">
           <button
             type="button"
