@@ -73,3 +73,23 @@ body {
     .belir-3 { animation-range: entry 0% cover 42%; }
   }
 }
+
+/* ——— SSS sekmeleri — gizli radio, JS yok ——— */
+.sss > .sss-konut,
+.sss > .sss-isletme {
+  display: none;
+}
+#sss-konut:checked ~ .sss-konut,
+#sss-isletme:checked ~ .sss-isletme {
+  display: block;
+}
+#sss-konut:checked ~ .sss-cubuk label[for="sss-konut"],
+#sss-isletme:checked ~ .sss-cubuk label[for="sss-isletme"] {
+  border-bottom-color: var(--color-marka-yesil);
+  color: var(--color-murekkep);
+}
+#sss-konut:focus-visible ~ .sss-cubuk label[for="sss-konut"],
+#sss-isletme:focus-visible ~ .sss-cubuk label[for="sss-isletme"] {
+  outline: 2px solid var(--color-murekkep);
+  outline-offset: 4px;
+}
