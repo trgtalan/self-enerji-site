@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   description:
     "Konut, apartman ve işletme çatılarına güneş enerjisi sistemleri kuruyoruz. Projelendirme, izin süreçleri, kurulum ve devreye alma tek elden. Keşif yerinde ve ücretsizdir.",
   alternates: { canonical: "/" },
+  /* YAYIN ÖNCESİ: site henüz hazır değil, arama motorlarına kapalı.
+     Alan adı bağlanıp içerik bitince bu satır ve robots.ts'teki disallow
+     birlikte kaldırılacak. */
+  robots: { index: false, follow: false },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

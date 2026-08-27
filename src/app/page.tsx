@@ -223,13 +223,12 @@ export default function AnaSayfa() {
       <section id="sorular" className="border-t border-[#e4e7e0]">
         <div className="mx-auto max-w-[1180px] px-6 py-20 sm:px-10 sm:py-28">
           <Beliren>
-            <Etiket>Sık sorulanlar</Etiket>
-            <h2 className="max-w-[22ch] text-[clamp(1.5rem,3.2vw,2.3rem)] font-normal leading-[1.12] tracking-[-0.03em] text-balance text-murekkep">
-              En çok merak edilen beş soru.
+            <h2 className="mb-5 text-[0.72rem] font-medium uppercase tracking-[0.11em] text-[#7c8a73]">
+              Sık sorulanlar
             </h2>
           </Beliren>
           <Beliren gecikme={1}>
-            <div className="mt-12 border-t border-[#e4e7e0]">
+            <div className="border-t border-[#e4e7e0]">
               <SorularOzet />
             </div>
           </Beliren>
