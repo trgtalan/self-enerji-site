@@ -39,68 +39,80 @@ export function Nav() {
   }, [acik]);
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-[#e4e7e0]/70 bg-white/85 backdrop-blur-md">
+    <nav
+      ref={kutu}
+      className="sticky top-0 z-50 border-b border-[#e4e7e0]/70 bg-white/90 backdrop-blur-md"
+    >
       <div className="mx-auto flex h-[68px] max-w-[1180px] items-center justify-between px-6 sm:px-10">
         <a href="#" aria-label="Self Enerji — sayfa başı" className="flex-none">
           <Kilit yukseklik={32} />
         </a>
-        <div ref={kutu} className="relative">
-          <button
-            type="button"
-            aria-expanded={acik}
-            aria-controls="ana-menu"
-            onClick={() => setAcik((a) => !a)}
-            className="flex h-10 w-10 items-center justify-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-murekkep"
-          >
-            <span aria-hidden className="relative block h-[13px] w-[22px]">
-              {[0, 1, 2].map((i) => (
-                <span
-                  key={i}
-                  className="absolute left-0 block h-px w-full bg-murekkep transition-transform duration-200 motion-reduce:transition-none"
-                  style={{
-                    top: i === 0 ? 0 : i === 1 ? "6px" : "12px",
-                    transform: acik
-                      ? i === 0
-                        ? "translateY(6px) rotate(45deg)"
-                        : i === 1
-                          ? "scaleX(0)"
-                          : "translateY(-6px) rotate(-45deg)"
-                      : undefined,
-                  }}
-                />
-              ))}
-            </span>
-            <span className="sr-only">Menü</span>
-          </button>
 
-          {acik && (
-            <div
-              id="ana-menu"
-              className="absolute right-0 top-[calc(100%+14px)] w-[228px] border border-[#e4e7e0] bg-white py-2 shadow-[0_12px_32px_rgba(38,64,29,0.07)]"
-            >
-              {BAGLANTILAR.map((b) =>
-                b.href.startsWith("#") ? (
-                  <a
-                    key={b.ad}
-                    href={b.href}
-                    onClick={() => setAcik(false)}
-                    className="block px-5 py-3 text-[0.95rem] text-murekkep-ikincil transition-colors hover:bg-[#f4f8ee] hover:text-murekkep"
-                  >
-                    {b.ad}
-                  </a>
-                ) : (
-                  <Link
-                    key={b.ad}
-                    href={b.href}
-                    onClick={() => setAcik(false)}
-                    className="block px-5 py-3 text-[0.95rem] text-murekkep-ikincil transition-colors hover:bg-[#f4f8ee] hover:text-murekkep"
-                  >
-                    {b.ad}
-                  </Link>
-                ),
-              )}
-            </div>
-          )}
+        <button
+          type="button"
+          aria-expanded={acik}
+          aria-controls="ana-menu"
+          onClick={() => setAcik((a) => !a)}
+          className="flex h-10 w-10 items-center justify-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-murekkep"
+        >
+          <span aria-hidden className="relative block h-[13px] w-[22px]">
+            {[0, 1, 2].map((i) => (
+              <span
+                key={i}
+                className="absolute left-0 block h-px w-full bg-murekkep transition-transform duration-300 motion-reduce:transition-none"
+                style={{
+                  top: i === 0 ? 0 : i === 1 ? "6px" : "12px",
+                  transform: acik
+                    ? i === 0
+                      ? "translateY(6px) rotate(45deg)"
+                      : i === 1
+                        ? "scaleX(0)"
+                        : "translateY(-6px) rotate(-45deg)"
+                    : undefined,
+                }}
+              />
+            ))}
+          </span>
+          <span className="sr-only">Menü</span>
+        </button>
+      </div>
+
+      {/* Panel her zaman DOM'da; yüksekliği geçişle açılır. */}
+      <div
+        id="ana-menu"
+        className={`grid overflow-hidden transition-[grid-template-rows,opacity] duration-300 ease-out motion-reduce:transition-none ${
+          acik ? "grid-rows-[1fr] border-t border-[#e4e7e0] bg-white opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="min-h-0">
+          <div className="mx-auto max-w-[1180px] px-6 py-3 sm:px-10 sm:py-5">
+            {BAGLANTILAR.map((b, i) => {
+              const sinif = `block border-b border-[#eef0ec] py-4 text-[1.24rem] tracking-[-0.022em] text-murekkep transition-opacity hover:opacity-55 sm:py-[17px] ${
+                i === BAGLANTILAR.length - 1 ? "border-b-0" : ""
+              }`;
+              return b.href.startsWith("#") ? (
+                <a
+                  key={b.ad}
+                  href={b.href}
+                  tabIndex={acik ? 0 : -1}
+                  onClick={() => setAcik(false)}
+                  className={sinif}
+                >
+                  {b.ad}
+                </a>
+              ) : (
+                <Link
+                  key={b.ad}
+                  href={b.href}
+                  tabIndex={acik ? 0 : -1}
+                  onClick={() => setAcik(false)}
+                  className={sinif}
+                >
+                  {b.ad}
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </div>
     </nav>
