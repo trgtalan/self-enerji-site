@@ -32,7 +32,7 @@ const SUREC = [
   {
     baslik: "Yerinde keşif",
     metin:
-      "Çatıyı yerinde inceleriz: yön, gölgelenme, çatının durumu ve bağlantı noktası. Keşif ücretsizdir.",
+      "Çatıyı yerinde inceleriz: yön, gölgelenme, çatının durumu ve bağlantı noktası. Keşif ve ardından hazırlanan teklif ücretsizdir.",
   },
   {
     baslik: "Proje ve izinler",
@@ -50,24 +50,20 @@ const SUREC = [
   },
 ];
 
-const ETKENLER = [
-  { ad: "Çatının yapısı", not: "Yön, eğim, yaş, taşıma kapasitesi" },
-  { ad: "Sistemin kapsamı", not: "Kurulu güç, panel ve invertör seçimi" },
-  { ad: "Yıllık tüketim", not: "Sistemin ne kadar büyük olacağını belirler" },
-  { ad: "Gelecek ihtiyaç", not: "Elektrikli araç, ısı pompası planı" },
-];
 
 export default function AnaSayfa() {
   return (
     <>
+      <Nav />
+
       {/* ═══ Açılış ═══ */}
       <header className="relative h-[min(96vh,880px)] min-h-[540px] overflow-hidden">
         <Gunes className="absolute inset-0 block h-full w-full" />
 
-        <div className="relative z-10 mx-auto flex h-full max-w-[1180px] flex-col px-6 pt-7 sm:px-10 sm:pt-9">
-          <Kilit yukseklik={38} animasyonlu />
+        <div className="relative z-10 mx-auto flex h-full max-w-[1180px] flex-col px-6 sm:px-10">
+          <div className="h-[70px] sm:h-[78px]" />
 
-          <div className="mt-[6vh] sm:mt-[7vh]">
+          <div className="mt-[4vh] sm:mt-[5vh]">
             <h1 className="mx-auto max-w-[19ch] text-center text-[clamp(1.75rem,5vw,3.4rem)] font-normal leading-[1.03] tracking-[-0.034em] text-balance text-murekkep">
               Çatı üstü güneş enerjisi — projelendirmeden devreye almaya.
             </h1>
@@ -128,7 +124,7 @@ export default function AnaSayfa() {
       </section>
 
       {/* ═══ Sistem şeması ═══ */}
-      <section className="border-y border-[#e4e7e0] bg-[#fbfaf7]">
+      <section id="nasil-calisir" className="border-y border-[#e4e7e0] bg-[#fbfaf7]">
         <div className="mx-auto max-w-[1180px] px-6 py-20 sm:px-10 sm:py-24">
           <Beliren>
             <div className="max-w-[54ch]">
@@ -148,7 +144,7 @@ export default function AnaSayfa() {
       </section>
 
       {/* ═══ Süreç ═══ */}
-      <section className="mx-auto max-w-[1180px] px-6 py-20 sm:px-10 sm:py-28">
+      <section id="surec" className="mx-auto max-w-[1180px] px-6 py-20 sm:px-10 sm:py-28">
         <Beliren>
           <Etiket>Süreç</Etiket>
           <h2 className="max-w-[20ch] text-[clamp(1.5rem,3.2vw,2.3rem)] font-normal leading-[1.12] tracking-[-0.03em] text-balance text-murekkep">
@@ -176,51 +172,8 @@ export default function AnaSayfa() {
         </ol>
       </section>
 
-      {/* ═══ Maliyet ═══ */}
-      <section className="border-t border-[#e4e7e0]">
-        <div className="mx-auto grid max-w-[1180px] gap-x-16 gap-y-12 px-6 py-20 sm:px-10 sm:py-28 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)]">
-          <Beliren>
-            <Etiket>Maliyet</Etiket>
-            <h2 className="max-w-[18ch] text-[clamp(1.5rem,3.2vw,2.3rem)] font-normal leading-[1.12] tracking-[-0.03em] text-balance text-murekkep">
-              Fiyat, keşiften sonra sisteme özel hazırlanır.
-            </h2>
-            <p className="mt-7 max-w-[52ch] text-[1.02rem] leading-relaxed text-murekkep-ikincil">
-              Sitede hazır paket fiyatı bulamazsınız. Çatının yönü, eğimi, gölgelenmesi
-              ve taşıma kapasitesi her evde başkadır; hazır paket bunları yok saydığı
-              için gerçek bedel çoğu zaman kurulum sırasında ortaya çıkar.
-            </p>
-            <p className="mt-5 max-w-[52ch] text-[1.02rem] leading-relaxed text-murekkep-ikincil">
-              Teklifte seçilen ekipman, kurulum kapsamı, garanti koşulları ve
-              yürütülecek izin süreçleri açıkça gösterilir — böylece yalnız toplam
-              bedeli değil, bedelin neye karşılık geldiğini de görürsünüz.
-            </p>
-          </Beliren>
-
-          <Beliren gecikme={1}>
-            <div>
-              <p className="mb-1 text-[0.78rem] font-medium uppercase tracking-[0.1em] text-[#7c8a73]">
-                Bedeli belirleyenler
-              </p>
-              <ul>
-                {ETKENLER.map((e) => (
-                  <li
-                    key={e.ad}
-                    className="flex items-baseline justify-between gap-6 border-b border-[#e4e7e0] py-4"
-                  >
-                    <span className="text-[0.99rem] font-medium text-murekkep">{e.ad}</span>
-                    <span className="text-right text-[0.86rem] leading-snug text-[#7c8a73]">
-                      {e.not}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Beliren>
-        </div>
-      </section>
-
       {/* ═══ SelfCheck ═══ */}
-      <section className="border-t border-[#e4e7e0] bg-[#fbfaf7]">
+      <section className="border-y border-[#e4e7e0] bg-[#fbfaf7]">
         <div className="mx-auto grid max-w-[1180px] items-center gap-x-16 gap-y-12 px-6 py-20 sm:px-10 sm:py-28 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.8fr)]">
           <Beliren>
             <Etiket>SelfCheck</Etiket>
@@ -274,7 +227,7 @@ export default function AnaSayfa() {
       </section>
 
       {/* ═══ Sık sorulanlar ═══ */}
-      <section className="border-t border-[#e4e7e0]">
+      <section id="sorular">
         <div className="mx-auto max-w-[1180px] px-6 py-20 sm:px-10 sm:py-28">
           <Beliren>
             <Etiket>Sık sorulanlar</Etiket>
@@ -289,15 +242,16 @@ export default function AnaSayfa() {
       </section>
 
       {/* ═══ Kapanış ═══ */}
-      <section id="iletisim" className="bg-marka-koyu">
+      <section id="iletisim" className="bg-murekkep">
         <div className="mx-auto max-w-[1180px] px-6 py-24 sm:px-10 sm:py-32">
           <Beliren>
             <h2 className="max-w-[16ch] text-[clamp(1.8rem,4.4vw,3rem)] font-normal leading-[1.06] tracking-[-0.032em] text-balance text-[#f2f8ea]">
               Çatınız için ücretsiz keşif.
             </h2>
             <p className="mt-7 max-w-[46ch] text-[1.02rem] leading-relaxed text-[#cfe3bd]">
-              Çatınızın uygunluğunu yerinde değerlendirelim. Keşif ücretsizdir ve
-              bağlayıcı değildir.
+              Çatınızın uygunluğunu yerinde değerlendirelim. Keşif de ardından
+              hazırlanan teklif de tümüyle ücretsizdir; hiçbir aşamada ön ödeme
+              istenmez ve teklif sizi bağlamaz.
             </p>
 
             <div className="mt-12 flex flex-wrap gap-x-10 gap-y-4">
@@ -327,6 +281,62 @@ export default function AnaSayfa() {
 }
 
 /* ——— sayfa içi yardımcılar ——— */
+
+/** Üst çubuk — sayfayla birlikte yapışır. Menü açma düğmesi yok: dar ekranda
+    ikincil bağlantılar gizlenir, birincil ikisi kalır. */
+function Nav() {
+  return (
+    <nav className="sticky top-0 z-50 border-b border-[#e4e7e0]/70 bg-white/85 backdrop-blur-md">
+      <div className="mx-auto flex h-[70px] max-w-[1180px] items-center justify-between gap-6 px-6 sm:h-[78px] sm:px-10">
+        <a href="#" aria-label="SELF Enerji — sayfa başı" className="flex-none">
+          <Kilit yukseklik={34} />
+        </a>
+        <div className="flex items-center gap-6 sm:gap-8">
+          <NavBag href="#nasil-calisir" gizli>
+            Nasıl çalışır
+          </NavBag>
+          <NavBag href="#surec" gizli>
+            Süreç
+          </NavBag>
+          <NavBag href="#sorular" gizli>
+            Sorular
+          </NavBag>
+          <NavBag href="/hesapla">SelfCheck</NavBag>
+          <a
+            href="#iletisim"
+            className="border border-murekkep px-4 py-2 text-[0.86rem] tracking-[-0.01em] text-murekkep transition-colors hover:bg-murekkep hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-murekkep"
+          >
+            Keşif talebi
+          </a>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+function NavBag({
+  href,
+  children,
+  gizli,
+}: {
+  href: string;
+  children: React.ReactNode;
+  /** dar ekranda gizlenir */
+  gizli?: boolean;
+}) {
+  const sinif = `text-[0.9rem] tracking-[-0.01em] text-murekkep-ikincil transition-colors hover:text-murekkep focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-murekkep${
+    gizli ? " hidden md:inline" : ""
+  }`;
+  return href.startsWith("#") ? (
+    <a href={href} className={sinif}>
+      {children}
+    </a>
+  ) : (
+    <Link href={href} className={sinif}>
+      {children}
+    </Link>
+  );
+}
 
 function Etiket({ children }: { children: React.ReactNode }) {
   return (

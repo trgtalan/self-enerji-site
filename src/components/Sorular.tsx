@@ -8,31 +8,41 @@
 
 const SORULAR = [
   {
-    soru: "Çatım zarar görür mü, sızdırır mı?",
+    soru: "Çatımın kaç metrekaresi gerekir?",
     cevap:
-      "Montaj öncesi çatının taşıma kapasitesi hesaplanır. Bağlantı noktaları çatı tipine uygun kenetlerle ve sızdırmazlık elemanlarıyla yapılır; kiremit kırılması veya membran delinmesi gereken durumlarda yalıtım yeniden sağlanır. Çatının mevcut durumu keşifte değerlendirilir — yenilenmesi gereken bir çatıya kurulum önerilmez.",
+      "Kaba bir ölçü olarak her 1 kW kurulu güç için eğimli çatıda yaklaşık 6, düz çatıda yaklaşık 5,5 m² kullanılabilir alan gerekir. Kullanılabilir alan, çatının tamamı değildir: baca, çatı penceresi, klima dış ünitesi ve gölge düşen bölgeler çıkarılır. Kesin alan keşifte ölçülür.",
   },
   {
-    soru: "Dağıtım şirketi izin vermezse ne olur?",
+    soru: "Tüm elektrik ihtiyacımı karşılayabilir miyim?",
     cevap:
-      "Başvuru bölgenizin dağıtım şirketine yapılır ve sonuç şebekenin o noktadaki kapasitesine bağlıdır. Kapasite yetersizse başvuru reddedilebilir ya da daha düşük bir güçle onaylanabilir. Bu ihtimal keşifte konuşulur; başvuru sonucu belli olmadan kurulum başlamaz.",
+      "Çatı alanı yetiyorsa ve sözleşme gücünüz uygunsa yıllık tüketiminizin tamamını karşılayacak bir sistem kurulabilir. Kurulabilecek gücün üst sınırını üç şey belirler: çatının net kullanılabilir alanı ve taşıma kapasitesi, faturanızdaki sözleşme gücü ve dağıtım şirketinin onayladığı bağlantı gücü.",
   },
   {
-    soru: "Fırtınada paneller uçar mı?",
+    soru: "Faturam nasıl etkilenir?",
     cevap:
-      "Taşıyıcı sistem, kurulumun yapılacağı bölgenin rüzgâr ve kar yüküne göre seçilir ve çatının taşıyıcı elemanlarına sabitlenir. Panellerin kendisi de rüzgâr ve dolu yüküne karşı sertifikalıdır; sertifika değerleri teklifte yer alır.",
+      "Ürettiğiniz elektriği o anda kullanıyorsanız faturaya hiç yansımaz. Kullanmadığınız fazla üretim şebekeye gider ve mahsuplaşmaya girer; o dönem şebekeden çektiğiniz elektrikle karşılıklı olarak dengelenir. Mahsuplaşmanın yöntemi ve dönemi mevzuata bağlıdır, mevzuat değişebilir.",
   },
   {
-    soru: "İnvertör birkaç yıl sonra bozulursa ne olur?",
+    soru: "Hangi izinler gerekir, kim yürütür?",
     cevap:
-      "İnvertör sistemin en çok yıpranan parçasıdır ve üretici garantisi kapsamındadır. Garanti süresi ve kapsamı markaya göre değişir; teklifte hangi markanın kaç yıl garantiyle verildiği yazılı olarak belirtilir.",
+      "Sırasıyla dağıtım şirketine çağrı mektubu başvurusu, elektrik ve statik projelerin hazırlanması, TEDAŞ onayı, bağlantı ve sistem kullanım anlaşmaları, kurulum bitince geçici kabul gerekir. Bu resmî işlemleri biz yürütürüz. Sizden beklenen, tapu ve yapı kullanma izni gibi binaya ait evrakları temin etmenizdir.",
   },
   {
-    soru: "Apartman çatısına kurulabilir mi?",
+    soru: "Elektrik kesildiğinde sistem çalışır mı?",
     cevap:
-      "Ortak çatı, kat malikleri kurulunun kararına bağlıdır. Karar alınmadan proje başvurusu yapılamaz. Karar süreci mülk sahiplerinin işidir; biz teknik uygunluğu ve kurulabilecek gücü keşifle ortaya koyarız.",
+      "Şebekeye bağlı bir sistem, kesinti sırasında güvenlik gereği kendini durdurur — aksi hâlde hatta çalışan ekipler için tehlike doğar. Kesintide de elektrik istiyorsanız sisteme batarya eklenmesi gerekir. Bu, sistemin bedelini belirgin biçimde değiştirir; keşifte konuşulur.",
   },
-];
+  {
+    soru: "Sistemin ömrü ne kadar, bakım ister mi?",
+    cevap:
+      "Paneller 25-30 yıl çalışacak şekilde üretilir ve üreticiler genellikle 25 yıllık performans garantisi verir. İnvertör daha kısa ömürlüdür ve sistemin ilk değişecek parçasıdır. Bakım yükü düşüktür: yılda bir görsel kontrol ve tozlu dönemlerde temizlik. Verilecek garantinin süresi ve kapsamı seçilen markaya göre değişir, teklifte yazılı olarak belirtilir.",
+  },
+  {
+    soru: "Apartman veya site çatısına kurulabilir mi?",
+    cevap:
+      "Ortak çatı, kat maliklerinin yazılı onayını gerektirir. Bu onay alınmadan proje başvurusu yapılamaz. Onay süreci mülk sahiplerinin yürüteceği bir iştir; biz çatının teknik uygunluğunu ve kurulabilecek gücü keşifle ortaya koyar, başvuru dosyasını hazırlarız.",
+  },
+]
 
 export function Sorular() {
   return (
