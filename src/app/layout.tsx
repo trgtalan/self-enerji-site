@@ -12,9 +12,14 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Self Enerji",
+  metadataBase: new URL("https://selfenerji.com"),
+  title: {
+    default: "Çatı Üstü Güneş Enerjisi Sistemleri — Self Enerji",
+    template: "%s — Self Enerji",
+  },
   description:
-    "Çatınız için anahtar teslim güneş enerjisi kurulumu — keşif, izin süreçleri ve mahsuplaşma danışmanlığı.",
+    "Konut, apartman ve işletme çatılarına güneş enerjisi sistemleri kuruyoruz. Projelendirme, izin süreçleri, kurulum ve devreye alma tek elden. Keşif yerinde ve ücretsizdir.",
+  alternates: { canonical: "/" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

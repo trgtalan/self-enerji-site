@@ -92,7 +92,42 @@ const ISLETME: Soru[] = [
   },
 ];
 
-function Liste({ sorular }: { sorular: Soru[] }) {
+/** Ana sayfa özeti — iki kitleye de değen beş soru, kısa karşılıklarıyla.
+    Tam cevaplar /sorular sayfasında; metin birebir tekrarlanmıyor. */
+const ORTAK: Soru[] = [
+  {
+    soru: "Çatımın kaç metrekaresi gerekir?",
+    cevap:
+      "Kaba ölçü: her 1 kW kurulu güç için eğimli çatıda yaklaşık 6, düz çatıda yaklaşık 5,5 m². Baca, çatı penceresi ve gölge düşen bölgeler bu alandan çıkar.",
+  },
+  {
+    soru: "Hangi izinler gerekir, kim yürütür?",
+    cevap:
+      "Dağıtım şirketine başvuru, elektrik ve statik proje, TEDAŞ onayı, bağlantı anlaşmaları ve geçici kabul. Bu işlemleri biz yürütürüz; sizden binaya ait evraklar beklenir.",
+  },
+  {
+    soru: "Faturam nasıl etkilenir?",
+    cevap:
+      "Ürettiğinizi o anda tükettiğiniz ölçüde faturaya hiç yansımaz. Fazlası şebekeye gider ve mahsuplaşmaya girer.",
+  },
+  {
+    soru: "Elektrik kesildiğinde sistem çalışır mı?",
+    cevap:
+      "Şebekeye bağlı sistem kesintide güvenlik gereği durur. Kesintide de elektrik isteniyorsa batarya eklenmesi gerekir.",
+  },
+  {
+    soru: "Sistemin ömrü ne kadar, bakım ister mi?",
+    cevap:
+      "Paneller 25-30 yıl çalışacak şekilde üretilir; invertör daha kısa ömürlüdür. Bakım yükü düşüktür: görsel kontrol ve tozlu dönemlerde temizlik.",
+  },
+];
+
+export function SorularOzet() {
+  return <Liste sorular={ORTAK} />;
+}
+
+function Liste({ sorular, seviye = "h3" }: { sorular: Soru[]; seviye?: "h2" | "h3" }) {
+  const Baslik = seviye;
   return (
     <div className="border-t border-[#e4e7e0]">
       {sorular.map((s) => (
@@ -101,9 +136,9 @@ function Liste({ sorular }: { sorular: Soru[] }) {
           className="group border-b border-[#e4e7e0] [&_summary::-webkit-details-marker]:hidden"
         >
           <summary className="flex cursor-pointer list-none items-start gap-6 py-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-murekkep">
-            <h3 className="flex-1 text-[1.06rem] font-medium tracking-[-0.02em] text-murekkep">
+            <Baslik className="flex-1 text-[1.06rem] font-medium tracking-[-0.02em] text-murekkep">
               {s.soru}
-            </h3>
+            </Baslik>
             <span
               aria-hidden
               className="mt-1.5 block h-[9px] w-[9px] flex-none rotate-45 border-b border-r border-[#7c8a73] transition-transform duration-200 group-open:-rotate-[135deg] motion-reduce:transition-none"
@@ -137,10 +172,10 @@ export function Sorular() {
       </div>
 
       <div className="sss-konut">
-        <Liste sorular={KONUT} />
+        <Liste sorular={KONUT} seviye="h2" />
       </div>
       <div className="sss-isletme">
-        <Liste sorular={ISLETME} />
+        <Liste sorular={ISLETME} seviye="h2" />
       </div>
     </div>
   );

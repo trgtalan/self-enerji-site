@@ -3,9 +3,10 @@ import Link from "next/link";
 import { Sorular } from "@/components/Sorular";
 
 export const metadata: Metadata = {
-  title: "Sorular — Self Enerji",
+  title: "Sorular",
   description:
     "Çatı üstü güneş enerjisi kurulumu hakkında en çok sorulanlar: gereken çatı alanı, izin süreçleri, mahsuplaşma, ömür ve bakım.",
+  alternates: { canonical: "/sorular" },
 };
 
 /** Sık sorulanlar — ana sayfadan ayrıldı, menüden erişiliyor. */

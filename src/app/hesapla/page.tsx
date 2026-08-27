@@ -3,9 +3,10 @@ import Link from "next/link";
 import { Isaret } from "@/components/Logo";
 
 export const metadata: Metadata = {
-  title: "SelfCheck — Self Enerji",
+  title: "SelfCheck",
   description:
     "Çatınıza uygun güneş enerjisi sistemini birlikte belirleyelim. Ücretsiz ve bağlayıcılığı yok.",
+  alternates: { canonical: "/hesapla" },
 };
 
 /**

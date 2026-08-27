@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Gunes } from "@/components/Gunes";
 import { SistemSemasi } from "@/components/SistemSemasi";
 import { Beliren } from "@/components/Beliren";
+import { SorularOzet } from "@/components/Sorular";
 
 /* Ana sayfa — bir enerji firmasının sayfası. SelfCheck yalnız bir bölüm.
    Sıra üç bağımsız model incelemesiyle doğrulandı: araç geriye, keşif öne.
@@ -62,8 +63,8 @@ export default function AnaSayfa() {
             </h1>
 
             <p className="mx-auto mt-7 w-full max-w-[48ch] text-center text-[clamp(0.95rem,1.4vw,1.09rem)] leading-relaxed tracking-[-0.01em] text-murekkep-ikincil">
-              Mersin ve çevresinde konut, apartman ve işletme çatılarına güneş
-              enerjisi sistemleri kuruyoruz. Keşif yerinde ve ücretsizdir.
+              Konut, apartman ve işletme çatılarına güneş enerjisi sistemleri
+              kuruyoruz. Keşif yerinde ve ücretsizdir.
             </p>
 
             <p className="mt-9 text-center">
@@ -218,6 +219,28 @@ export default function AnaSayfa() {
           </Beliren>
         </div>
       </section>
+      {/* ═══ Sık sorulanlar — özet ═══ */}
+      <section id="sorular" className="border-t border-[#e4e7e0]">
+        <div className="mx-auto max-w-[1180px] px-6 py-20 sm:px-10 sm:py-28">
+          <Beliren>
+            <Etiket>Sık sorulanlar</Etiket>
+            <h2 className="max-w-[22ch] text-[clamp(1.5rem,3.2vw,2.3rem)] font-normal leading-[1.12] tracking-[-0.03em] text-balance text-murekkep">
+              En çok merak edilen beş soru.
+            </h2>
+          </Beliren>
+          <Beliren gecikme={1}>
+            <div className="mt-12 border-t border-[#e4e7e0]">
+              <SorularOzet />
+            </div>
+          </Beliren>
+          <Beliren gecikme={2}>
+            <p className="mt-10">
+              <Baglanti href="/sorular">Bütün soruları görün</Baglanti>
+            </p>
+          </Beliren>
+        </div>
+      </section>
+
       {/* ═══ Kapanış ═══ */}
       <section id="iletisim" className="bg-murekkep">
         <div className="mx-auto max-w-[1180px] px-6 py-24 sm:px-10 sm:py-32">
