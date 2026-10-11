@@ -41,9 +41,9 @@ export function Nav() {
     <>
       <nav className="sticky top-0 z-[70] border-b border-[#e4e7e0]/70 bg-white/90 backdrop-blur-md">
         <div className="mx-auto flex h-[68px] max-w-[1180px] items-center justify-between px-6 sm:px-10">
-          <a href="#" aria-label="Self Enerji — sayfa başı" className="flex-none">
+          <Link href="/" aria-label="Self Enerji — ana sayfa" className="flex-none">
             <Kilit yukseklik={32} />
-          </a>
+          </Link>
 
           <button
             type="button"
