@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Beliren } from "@/components/Beliren";
 import { Etiket, Baglanti } from "@/components/Ogeler";
+import { SelfCheck } from "@/components/SelfCheck";
 
 export const metadata: Metadata = {
   title: "SelfCheck",
@@ -10,35 +11,11 @@ export const metadata: Metadata = {
 };
 
 /**
- * SelfCheck giriş sayfası.
- * Hesap motoru HENÜZ yok (`isler/hesap/`) — bu sürüm süreci anlatır ve
- * WhatsApp'a devreder. Sayı üretmez: doğrulanmamış rakam yazılmıyor.
- * Form da yok: form kişisel veri toplar, o da KVKK aydınlatma metnini gerektirir.
- *
- * Tasarım ana sayfayla aynı dil: beyaz zemin, çizgi ızgara, altı çizili eylem,
- * koyu mürekkep kapanış.
+ * SelfCheck — sihirbaz sayfası. Kuruluyor: ilk adım kitle seçimi.
+ * Hesap motoru `isler/hesap/` altında üretiliyor; sayı ondan gelecek.
+ * Tasarım ana sayfayla aynı dil.
  */
 
-const ADIMLAR = [
-  {
-    baslik: "Yazın",
-    metin: "WhatsApp'tan bize ulaşın. Uzun bir form doldurmanız gerekmiyor.",
-  },
-  {
-    baslik: "Çatınızı konuşalım",
-    metin:
-      "Konum, çatı yönü, eğim ve yıllık elektrik tüketiminiz — birkaç soru yeterli.",
-  },
-  {
-    baslik: "Değerlendirme",
-    metin:
-      "Çatınızın üretebileceği enerjiyi ve uygun sistem büyüklüğünü sizin için çıkarıyoruz.",
-  },
-  {
-    baslik: "Sonucu paylaşalım",
-    metin: "Size özel, bağlayıcılığı olmayan bir değerlendirme ile dönüş yapıyoruz.",
-  },
-];
 
 const WHATSAPP =
   "https://wa.me/4915256227461?text=" +
@@ -53,41 +30,8 @@ export default function HesaplaSayfasi() {
         <h1 className="max-w-[20ch] text-[clamp(1.75rem,4.4vw,3rem)] font-normal leading-[1.06] tracking-[-0.034em] text-balance text-murekkep">
           Çatınıza uygun sistemi birlikte belirleyelim.
         </h1>
-        <p className="mt-7 max-w-[52ch] text-[1.02rem] leading-relaxed text-murekkep-ikincil">
-          Birkaç soruyla çatınızın üretebileceği enerjiyi ve uygun sistem
-          büyüklüğünü çıkarıyoruz. Ücretsizdir, bağlayıcılığı yoktur.
-        </p>
-        <p className="mt-9">
-          <Baglanti href={WHATSAPP} disari>
-            WhatsApp&apos;tan başlatın
-          </Baglanti>
-        </p>
-      </section>
-
-      {/* ═══ Adımlar ═══ */}
-      <section className="border-y border-[#e4e7e0] bg-[#fbfaf7]">
-        <div className="mx-auto max-w-[1180px] px-6 py-20 sm:px-10 sm:py-24">
-          <Beliren>
-            <Etiket>Nasıl işliyor</Etiket>
-          </Beliren>
-          <ol className="mt-8 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-            {ADIMLAR.map((adim, i) => (
-              <li key={adim.baslik} className={`relative belir belir-${Math.min(i, 3)}`}>
-                <div className="flex items-center gap-3">
-                  <span className="text-[0.78rem] font-medium tabular-nums text-marka-koyu">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="h-px flex-1 bg-[#e4e7e0]" />
-                </div>
-                <h2 className="mt-5 text-[1.12rem] font-medium tracking-[-0.022em] text-murekkep">
-                  {adim.baslik}
-                </h2>
-                <p className="mt-2.5 text-[0.94rem] leading-relaxed text-murekkep-ikincil">
-                  {adim.metin}
-                </p>
-              </li>
-            ))}
-          </ol>
+        <div className="mt-12 sm:mt-14">
+          <SelfCheck />
         </div>
       </section>
 
