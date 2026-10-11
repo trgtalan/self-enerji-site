@@ -17,7 +17,6 @@ type AudienceOption = {
   icon: ReactNode;
 };
 
-const steps = ["Kitle", "Tüketim", "Çatı", "Konum", "Sonuç"];
 
 function HomeIllustration() {
   return (
@@ -185,7 +184,7 @@ const options: AudienceOption[] = [
     id: "home",
     eyebrow: "Konut",
     title: "Evim için",
-    description: "Müstakil ev, apartman dairesi, site",
+    description: "Müstakil ev, apartman ve site ortak kullanım alanları",
     icon: <HomeIllustration />,
   },
   {
@@ -292,87 +291,7 @@ export function SelfCheck() {
       />
 
       <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-        <section
-          aria-label="SelfCheck ilerleme durumu"
-          className="relative overflow-hidden rounded-[24px] border border-white/80 bg-white/72 p-4 shadow-[0_18px_65px_rgba(38,64,29,0.10)] backdrop-blur-xl sm:rounded-[30px] sm:p-6"
-        >
-          <div className="absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-marka-acik to-transparent" />
-
-          <div className="mb-4 flex items-center justify-between gap-4 sm:mb-5">
-            <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-2xl bg-murekkep text-marka-acik shadow-[0_8px_22px_rgba(38,64,29,.25)]">
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 24 24"
-                  className="h-5 w-5"
-                  fill="none"
-                >
-                  <path
-                    d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                  />
-                  <circle cx="12" cy="12" r="3.6" fill="currentColor" />
-                </svg>
-              </span>
-              <div>
-                <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-marka-koyu">
-                  SelfCheck
-                </p>
-                <p className="text-sm font-bold text-murekkep">Sistem keşfi</p>
-              </div>
-            </div>
-
-            <span className="rounded-full border border-marka-yesil/20 bg-marka-en-acik/60 px-3 py-1.5 text-xs font-extrabold text-marka-koyu">
-              1 / 5
-            </span>
-          </div>
-
-          <ol className="grid grid-cols-5 gap-2" aria-label="Hesaplama adımları">
-            {steps.map((step, index) => {
-              const active = index === 0;
-
-              return (
-                <li
-                  key={step}
-                  aria-current={active ? "step" : undefined}
-                  className="relative"
-                >
-                  <div
-                    className={`mb-2 h-1.5 overflow-hidden rounded-full ${
-                      active ? "bg-marka-yesil" : "bg-marka-koyu/12"
-                    }`}
-                  >
-                    {active && (
-                      <span className="block h-full w-full origin-left animate-[progress-in_.7s_ease-out_both] rounded-full bg-gradient-to-r from-marka-acik via-marka-yesil to-marka-koyu motion-reduce:animate-none" />
-                    )}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span
-                      className={`grid h-6 w-6 shrink-0 place-items-center rounded-full text-[10px] font-extrabold ${
-                        active
-                          ? "bg-murekkep text-white shadow-[0_5px_12px_rgba(38,64,29,.2)]"
-                          : "bg-marka-koyu/8 text-murekkep-ikincil"
-                      }`}
-                    >
-                      {index + 1}
-                    </span>
-                    <span
-                      className={`hidden text-xs font-bold sm:block ${
-                        active ? "text-murekkep" : "text-murekkep-ikincil/70"
-                      }`}
-                    >
-                      {step}
-                    </span>
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
-        </section>
-
-        <div className="grid items-end gap-8 py-10 sm:py-14 lg:grid-cols-[1.08fr_.92fr] lg:gap-16 lg:py-16">
+        <div className="py-10 sm:py-14 lg:py-16">
           <header className="max-w-3xl">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-marka-yesil/25 bg-white/70 px-3 py-2 text-xs font-extrabold uppercase tracking-[0.2em] text-marka-koyu shadow-[0_8px_26px_rgba(38,64,29,.08)] backdrop-blur">
               <span className="relative flex h-2.5 w-2.5">
@@ -404,49 +323,8 @@ export function SelfCheck() {
               belirleyelim.
             </h1>
 
-            <p className="mt-7 max-w-xl text-base font-medium leading-7 text-murekkep-ikincil sm:text-lg sm:leading-8">
-              İhtiyacınızı doğru akışla değerlendirebilmemiz için önce kullanım
-              tipini seçin. Sonraki adımlarda tüketim, çatı ve konum bilgilerinizi
-              birlikte ele alacağız.
-            </p>
           </header>
 
-          <div
-            aria-hidden="true"
-            className="relative mx-auto hidden h-[230px] w-full max-w-md lg:block"
-          >
-            <div className="absolute left-14 top-3 h-44 w-44 animate-[soft-float_6s_ease-in-out_infinite] rounded-full bg-gradient-to-br from-[#ffc786] to-[#e8894a] shadow-[0_25px_80px_rgba(232,137,74,.32)] motion-reduce:animate-none" />
-            <div className="absolute left-[104px] top-[52px] h-24 w-24 rounded-full border border-white/45" />
-            <div className="absolute bottom-1 right-3 w-72 rounded-[28px] border border-white/80 bg-white/68 p-5 shadow-[0_24px_70px_rgba(38,64,29,.15)] backdrop-blur-xl">
-              <div className="flex items-center gap-4">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-murekkep text-marka-acik shadow-lg">
-                  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none">
-                    <path
-                      d="M4 16.5 9.2 11l3.3 3.2L20 6.5"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M15 6.5h5v5"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </span>
-                <div>
-                  <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-marka-koyu">
-                    Adım adım
-                  </p>
-                  <p className="mt-1 text-sm font-bold text-murekkep">
-                    Size uygun akışla ilerleyin
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <section
@@ -468,9 +346,6 @@ export function SelfCheck() {
                 Sistem nereye kurulacak?
               </h2>
             </div>
-            <p className="max-w-sm text-sm font-medium leading-6 text-murekkep-ikincil">
-              Seçiminiz, devamındaki soruları kullanım tipinize göre düzenler.
-            </p>
           </div>
 
           <div
@@ -594,35 +469,10 @@ export function SelfCheck() {
           </div>
         </section>
 
-        <p className="mx-auto mt-6 flex max-w-xl items-center justify-center gap-2 text-center text-xs font-semibold leading-5 text-murekkep-ikincil/80 sm:text-sm">
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 24 24"
-            className="h-4 w-4 shrink-0 text-marka-koyu"
-            fill="none"
-          >
-            <path
-              d="M7 10V8a5 5 0 0 1 10 0v2M6 10h12v10H6V10Z"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          Seçiminizi klavyedeki yön tuşlarıyla da değiştirebilirsiniz.
-        </p>
       </div>
 
       <style>{`
-        @keyframes soft-float {
-          0%, 100% { transform: translate3d(0, 0, 0); }
-          50% { transform: translate3d(0, -12px, 0); }
-        }
 
-        @keyframes progress-in {
-          from { transform: scaleX(0); opacity: 0; }
-          to { transform: scaleX(1); opacity: 1; }
-        }
 
         @media (prefers-reduced-motion: reduce) {
           *, *::before, *::after {
