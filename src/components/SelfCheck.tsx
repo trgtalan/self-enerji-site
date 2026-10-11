@@ -177,17 +177,9 @@ export function SelfCheck() {
         className="pointer-events-none absolute -left-32 top-[42%] -z-10 h-80 w-80 rounded-full bg-marka-acik/20 blur-3xl"
       />
 
-      <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-        <div className="py-10 sm:py-14 lg:py-16">
+      <div className="mx-auto w-full max-w-7xl px-4 pb-8 pt-8 sm:px-6 sm:pb-12 sm:pt-10 lg:px-8 lg:pb-16 lg:pt-12">
+        <div className="pb-10 sm:pb-14 lg:pb-16">
           <header className="max-w-3xl">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-marka-yesil/25 bg-white/70 px-3 py-2 text-xs font-extrabold uppercase tracking-[0.2em] text-marka-koyu shadow-[0_8px_26px_rgba(38,64,29,.08)] backdrop-blur">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-marka-yesil opacity-60 motion-reduce:animate-none" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-marka-koyu" />
-              </span>
-              SelfCheck
-            </div>
-
             <h1 className="max-w-[16ch] text-[clamp(2.35rem,6vw,5.2rem)] font-extrabold leading-[0.98] tracking-[-0.055em] text-murekkep">
               Çatınıza uygun sistemi{" "}
               <span className="relative inline-block text-marka-koyu">
