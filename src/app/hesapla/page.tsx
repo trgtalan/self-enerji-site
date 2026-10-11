@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Isaret } from "@/components/Logo";
+import { Beliren } from "@/components/Beliren";
+import { Etiket, Baglanti } from "@/components/Ogeler";
 
 export const metadata: Metadata = {
   title: "SelfCheck",
@@ -11,9 +11,12 @@ export const metadata: Metadata = {
 
 /**
  * SelfCheck giriş sayfası.
- * Hesap mantığı ve sihirbaz HENÜZ yok — bu sürüm süreci anlatır ve WhatsApp'a
- * devreder. Sayı üretmez, çünkü ilk sürümde doğrulanmamış rakam yazılmıyor.
+ * Hesap motoru HENÜZ yok (`isler/hesap/`) — bu sürüm süreci anlatır ve
+ * WhatsApp'a devreder. Sayı üretmez: doğrulanmamış rakam yazılmıyor.
  * Form da yok: form kişisel veri toplar, o da KVKK aydınlatma metnini gerektirir.
+ *
+ * Tasarım ana sayfayla aynı dil: beyaz zemin, çizgi ızgara, altı çizili eylem,
+ * koyu mürekkep kapanış.
  */
 
 const ADIMLAR = [
@@ -33,8 +36,7 @@ const ADIMLAR = [
   },
   {
     baslik: "Sonucu paylaşalım",
-    metin:
-      "Size özel, bağlayıcılığı olmayan bir değerlendirme ile dönüş yapıyoruz.",
+    metin: "Size özel, bağlayıcılığı olmayan bir değerlendirme ile dönüş yapıyoruz.",
   },
 ];
 
@@ -44,58 +46,70 @@ const WHATSAPP =
 
 export default function HesaplaSayfasi() {
   return (
-    <main className="min-h-dvh bg-zemin-koyu px-6 py-20 text-white">
-      <div className="mx-auto flex max-w-3xl flex-col gap-14">
-        <header className="flex flex-col items-center gap-6 text-center">
-          <Link href="/" aria-label="Ana sayfaya dön">
-            <Isaret yukseklik={64} />
-          </Link>
-          <h1 className="text-balance text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
-            <span className="text-marka-acik">SelfCheck</span> nasıl işliyor?
-          </h1>
-          <p className="max-w-xl text-pretty text-base leading-relaxed text-white/70">
-            Çatınıza uygun güneş enerjisi sistemini birlikte belirliyoruz.
-            Ücretsiz, bağlayıcılığı yok.
-          </p>
-        </header>
+    <main>
+      {/* ═══ Giriş ═══ */}
+      <section className="mx-auto max-w-[1180px] px-6 pb-16 pt-16 sm:px-10 sm:pb-20 sm:pt-24">
+        <Etiket>SelfCheck</Etiket>
+        <h1 className="max-w-[20ch] text-[clamp(1.75rem,4.4vw,3rem)] font-normal leading-[1.06] tracking-[-0.034em] text-balance text-murekkep">
+          Çatınıza uygun sistemi birlikte belirleyelim.
+        </h1>
+        <p className="mt-7 max-w-[52ch] text-[1.02rem] leading-relaxed text-murekkep-ikincil">
+          Birkaç soruyla çatınızın üretebileceği enerjiyi ve uygun sistem
+          büyüklüğünü çıkarıyoruz. Ücretsizdir, bağlayıcılığı yoktur.
+        </p>
+        <p className="mt-9">
+          <Baglanti href={WHATSAPP} disari>
+            WhatsApp&apos;tan başlatın
+          </Baglanti>
+        </p>
+      </section>
 
-        <ol className="flex flex-col gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-          {ADIMLAR.map((adim, i) => (
-            <li
-              key={adim.baslik}
-              className="flex gap-5 border-b border-white/10 px-6 py-6 last:border-b-0"
-            >
-              <span
-                className="mt-0.5 flex size-8 flex-none items-center justify-center rounded-full bg-marka-acik text-sm font-bold text-zemin-koyu"
-                aria-hidden="true"
-              >
-                {i + 1}
-              </span>
-              <div className="flex flex-col gap-1.5">
-                <h2 className="text-lg font-bold">{adim.baslik}</h2>
-                <p className="text-pretty leading-relaxed text-white/70">{adim.metin}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-
-        <div className="flex flex-col items-center gap-4">
-          <a
-            href={WHATSAPP}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 rounded-full bg-marka-acik px-7 py-3.5 text-base font-bold text-zemin-koyu transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-marka-acik"
-          >
-            WhatsApp&apos;tan başlat
-          </a>
-          <Link
-            href="/"
-            className="text-sm text-white/50 underline underline-offset-4 transition-colors hover:text-white/80"
-          >
-            Ana sayfaya dön
-          </Link>
+      {/* ═══ Adımlar ═══ */}
+      <section className="border-y border-[#e4e7e0] bg-[#fbfaf7]">
+        <div className="mx-auto max-w-[1180px] px-6 py-20 sm:px-10 sm:py-24">
+          <Beliren>
+            <Etiket>Nasıl işliyor</Etiket>
+          </Beliren>
+          <ol className="mt-8 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+            {ADIMLAR.map((adim, i) => (
+              <li key={adim.baslik} className={`relative belir belir-${Math.min(i, 3)}`}>
+                <div className="flex items-center gap-3">
+                  <span className="text-[0.78rem] font-medium tabular-nums text-marka-koyu">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="h-px flex-1 bg-[#e4e7e0]" />
+                </div>
+                <h2 className="mt-5 text-[1.12rem] font-medium tracking-[-0.022em] text-murekkep">
+                  {adim.baslik}
+                </h2>
+                <p className="mt-2.5 text-[0.94rem] leading-relaxed text-murekkep-ikincil">
+                  {adim.metin}
+                </p>
+              </li>
+            ))}
+          </ol>
         </div>
-      </div>
+      </section>
+
+      {/* ═══ Kapanış ═══ */}
+      <section className="bg-murekkep">
+        <div className="mx-auto max-w-[1180px] px-6 py-24 sm:px-10 sm:py-28">
+          <Beliren>
+            <h2 className="max-w-[18ch] text-[clamp(1.6rem,3.8vw,2.6rem)] font-normal leading-[1.08] tracking-[-0.032em] text-balance text-[#f2f8ea]">
+              İlk adım bir mesaj.
+            </h2>
+            <p className="mt-6 max-w-[46ch] text-[1.02rem] leading-relaxed text-[#cfe3bd]">
+              Değerlendirme de ardından yapılan keşif de ücretsizdir; hiçbir aşamada
+              ön ödeme istenmez.
+            </p>
+            <p className="mt-10">
+              <Baglanti href={WHATSAPP} disari koyuZemin>
+                WhatsApp&apos;tan başlatın
+              </Baglanti>
+            </p>
+          </Beliren>
+        </div>
+      </section>
     </main>
   );
 }

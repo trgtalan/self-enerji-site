@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { Gunes } from "@/components/Gunes";
 import { SistemSemasi } from "@/components/SistemSemasi";
 import { Beliren } from "@/components/Beliren";
+import { Etiket, Baglanti } from "@/components/Ogeler";
 import { SorularOzet } from "@/components/Sorular";
 
 /* Ana sayfa — bir enerji firmasının sayfası. SelfCheck yalnız bir bölüm.
@@ -271,29 +271,5 @@ export default function AnaSayfa() {
         </div>
       </section>
 </>
-  );
-}
-
-/* ——— sayfa içi yardımcılar ——— */
-
-function Etiket({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="mb-5 text-[0.72rem] font-medium uppercase tracking-[0.11em] text-[#7c8a73]">
-      {children}
-    </p>
-  );
-}
-
-function Baglanti({ href, children }: { href: string; children: React.ReactNode }) {
-  const sinif =
-    "inline-block border-b border-murekkep pb-0.5 text-[1rem] tracking-[-0.01em] text-murekkep transition-opacity hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-murekkep";
-  return href.startsWith("#") ? (
-    <a href={href} className={sinif}>
-      {children}
-    </a>
-  ) : (
-    <Link href={href} className={sinif}>
-      {children}
-    </Link>
   );
 }
